@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>auth-service</name>
+    </assembly>
+    <members>
+        <member name="T:auth_service.Controllers.AuthController">
+            <summary>
+            Authentication and user management endpoints
+            </summary>
+        </member>
+        <member name="M:auth_service.Controllers.AuthController.Register(auth_service.Model.DTO.RegisterRequestDTO)">
+            <summary>
+            Register a new user account
+            </summary>
+            <param name="registerRequestDTO">User registration details including email, password, and roles</param>
+            <returns>Created user information with ID</returns>
+            <remarks>
+            Sample request:
+            
+                POST /Auth/Register
+                {
+                   "email": "user@example.com",
+                   "password": "SecurePassword123",
+                   "roles": ["Client"]
+                }
+                
+            Available roles: Admin, Client
+            </remarks>
+            <response code="200">User created successfully</response>
+            <response code="400">Invalid input or registration failed</response>
+            <response code="500">Internal server error during registration</response>
+        </member>
+        <member name="M:auth_service.Controllers.AuthController.Login(auth_service.Model.DTO.LoginRequestDTO)">
+            <summary>
+            Login and receive JWT authentication token
+            </summary>
+            <param name="loginRequestDTO">Login credentials (email and password)</param>
+            <returns>JWT token, user information, and assigned roles</returns>
+            <remarks>
+            Sample request:
+            
+                POST /Auth/Login
+                {
+                   "email": "user@example.com",
+                   "password": "SecurePassword123"
+                }
+                
+            The returned JWT token should be included in subsequent requests:
+            Authorization: Bearer {token}
+            </remarks>
+            <response code="200">Login successful, returns JWT token and user info</response>
+            <response code="400">Invalid email or password</response>
+            <response code="500">Internal server error during login</response>
+        </member>
+        <member name="M:auth_service.Controllers.AuthController.Delete(System.String)">
+            <summary>
+            Delete a user account by ID (Admin only)
+            </summary>
+            <param name="id">The unique identifier of the user to delete</param>
+            <returns>Deletion confirmation</returns>
+            <remarks>
+            This endpoint permanently deletes a user account from the authentication system.
+            Typically should only be called after the user profile has been deleted from the user service.
+            </remarks>
+            <response code="200">User deleted successfully</response>
+            <response code="400">Invalid user ID</response>
+            <response code="404">User not found</response>
+            <response code="500">Failed to delete user</response>
+        </member>
+        <member name="T:auth_service.Migrations.initial">
+            <inheritdoc />
+        </member>
+        <member name="M:auth_service.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:auth_service.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:auth_service.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:auth_service.Migrations.initial1">
+            <inheritdoc />
+        </member>
+        <member name="M:auth_service.Migrations.initial1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:auth_service.Migrations.initial1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:auth_service.Migrations.initial1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,47 @@
+http:
+  middlewares:
+    # CORS middleware
+    cors-headers:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowOriginList:
+          - "http://localhost:5173"
+          - "http://localhost:3000"
+        accessControlAllowHeaders:
+          - "Content-Type"
+          - "Authorization"
+        accessControlMaxAge: 100
+        addVaryHeader: true
+
+  
+
+   
+    strip-user-headers:
+      headers:
+        customRequestHeaders:
+          X-User-Id: ""
+          X-User-Role: ""
+
+    my-jwt-middleware:
+      plugin:
+        jwt-validation-middleware:
+          secret: "dd15022003fjgn55vjfbbn22d24fkgnbnnn"
+          optional: true
+          payloadHeaders:
+            X-User-Id: "sub"
+            X-User-Role: "role"   
+          authQueryParam: authToken
+          authCookieName: authToken
+          forwardAuth: false
+
+    jwt-then-cors:
+      chain:
+        middlewares:
+          - "strip-user-headers@file"
+          - "my-jwt-middleware@file"
+          - "cors-headers@file"

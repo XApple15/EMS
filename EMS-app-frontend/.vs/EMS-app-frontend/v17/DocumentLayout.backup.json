@@ -1,0 +1,478 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\userformmodal.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\userformmodal.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\navbar.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\admindashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\admindashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\admindashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\admindashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\api\\api-service.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\api\\api-service.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\api\\axios.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\api\\axios.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\main.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\service\\device-service.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\service\\device-service.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\register.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\register.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\register.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\login.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\clientdashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\clientdashboard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\clientdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\clientdashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\.vscode\\launch.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:.vscode\\launch.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\George\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\1.0.1184077\\Sdk\\Sdk.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\nuget.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:nuget.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\changelog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:changelog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 192,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:17:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:15:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\package.json",
+              "RelativeDocumentMoniker": "package.json",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\package.json",
+              "RelativeToolTip": "package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-04T14:05:47.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-04T14:05:45.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\vite.config.js",
+              "RelativeDocumentMoniker": "vite.config.js",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\vite.config.js",
+              "RelativeToolTip": "vite.config.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-04T14:05:45.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-11-04T14:00:21.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Register.css",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Register.css",
+              "RelativeDocumentMoniker": "src\\components\\Register.css",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Register.css",
+              "RelativeToolTip": "src\\components\\Register.css",
+              "ViewState": "AgIAAGwAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-03T19:49:19.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Navbar.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Navbar.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Navbar.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Navbar.jsx",
+              "RelativeToolTip": "src\\components\\Navbar.jsx",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwFIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-03T19:49:16.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Navbar.css",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Navbar.css",
+              "RelativeDocumentMoniker": "src\\components\\Navbar.css",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Navbar.css",
+              "RelativeToolTip": "src\\components\\Navbar.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-03T19:49:13.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.css",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Login.css",
+              "RelativeDocumentMoniker": "src\\components\\Login.css",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Login.css",
+              "RelativeToolTip": "src\\components\\Login.css",
+              "ViewState": "AgIAAGMAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-03T19:41:56.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserFormModal.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\UserFormModal.jsx",
+              "RelativeDocumentMoniker": "src\\components\\UserFormModal.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\UserFormModal.jsx",
+              "RelativeToolTip": "src\\components\\UserFormModal.jsx",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwBsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-02T16:11:57.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminDashboard.css",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\AdminDashboard.css",
+              "RelativeDocumentMoniker": "src\\components\\AdminDashboard.css",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\AdminDashboard.css",
+              "RelativeToolTip": "src\\components\\AdminDashboard.css",
+              "ViewState": "AgIAADgBAAAAAAAAAIBJwBwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-02T16:09:19.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminDashboard.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\AdminDashboard.jsx",
+              "RelativeDocumentMoniker": "src\\components\\AdminDashboard.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\AdminDashboard.jsx",
+              "RelativeToolTip": "src\\components\\AdminDashboard.jsx",
+              "ViewState": "AgIAAP8AAAAAAAAAAIBJwAsBAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-02T16:09:08.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "device-service.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\service\\device-service.jsx",
+              "RelativeDocumentMoniker": "src\\service\\device-service.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\service\\device-service.jsx",
+              "RelativeToolTip": "src\\service\\device-service.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-01T22:25:13.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ClientDashboard.css",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\ClientDashboard.css",
+              "RelativeDocumentMoniker": "src\\components\\ClientDashboard.css",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\ClientDashboard.css",
+              "RelativeToolTip": "src\\components\\ClientDashboard.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-30T12:09:39.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "api-service.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\api\\api-service.jsx",
+              "RelativeDocumentMoniker": "src\\api\\api-service.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\api\\api-service.jsx",
+              "RelativeToolTip": "src\\api\\api-service.jsx",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwBoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-30T12:06:06.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ClientDashboard.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\ClientDashboard.jsx",
+              "RelativeDocumentMoniker": "src\\components\\ClientDashboard.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\ClientDashboard.jsx",
+              "RelativeToolTip": "src\\components\\ClientDashboard.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-30T12:05:25.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Register.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Register.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Register.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Register.jsx",
+              "RelativeToolTip": "src\\components\\Register.jsx",
+              "ViewState": "AgIAAMwAAAAAAAAAAIBJwHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-29T22:59:39.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Login.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Login.jsx",
+              "RelativeDocumentMoniker": "src\\components\\Login.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\Login.jsx",
+              "RelativeToolTip": "src\\components\\Login.jsx",
+              "ViewState": "AgIAAHIAAAAAAAAAAIBJwAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-29T22:52:05.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "axios.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\api\\axios.jsx",
+              "RelativeDocumentMoniker": "src\\api\\axios.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\api\\axios.jsx",
+              "RelativeToolTip": "src\\api\\axios.jsx",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-29T22:51:59.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\App.jsx",
+              "RelativeDocumentMoniker": "src\\App.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\App.jsx",
+              "RelativeToolTip": "src\\App.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwBUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-29T22:49:28.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "main.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\main.jsx",
+              "RelativeDocumentMoniker": "src\\main.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\main.jsx",
+              "RelativeToolTip": "src\\main.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-29T22:49:25.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\index.html",
+              "RelativeDocumentMoniker": "index.html",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\index.html",
+              "RelativeToolTip": "index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-29T22:49:21.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Sdk.targets",
+              "DocumentMoniker": "C:\\Users\\George\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\1.0.1184077\\Sdk\\Sdk.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\1.0.1184077\\Sdk\\Sdk.targets",
+              "ToolTip": "C:\\Users\\George\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\1.0.1184077\\Sdk\\Sdk.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\microsoft.visualstudio.javascript.sdk\\1.0.1184077\\Sdk\\Sdk.targets",
+              "ViewState": "AgIAAOsAAAAAAAAAAAArwPgAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-29T15:43:17.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "launch.json",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\.vscode\\launch.json",
+              "RelativeDocumentMoniker": ".vscode\\launch.json",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\.vscode\\launch.json",
+              "RelativeToolTip": ".vscode\\launch.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-29T15:43:11.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "nuget.config",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\nuget.config",
+              "RelativeDocumentMoniker": "nuget.config",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\nuget.config",
+              "RelativeToolTip": "nuget.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-29T15:42:47.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CHANGELOG.md",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\CHANGELOG.md",
+              "RelativeDocumentMoniker": "CHANGELOG.md",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\CHANGELOG.md",
+              "RelativeToolTip": "CHANGELOG.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-29T15:42:46.246Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 192,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+name: dockercompose1163020246386950322
+services:
+  auth-service:
+    build:
+      context: C:\Users\George\source\repos\EMS-app
+      dockerfile: auth-service/Dockerfile
+    container_name: auth-service
+    depends_on:
+      sqlserver:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: authservice
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.auth.entrypoints: web
+      traefik.http.routers.auth.rule: Host(`auth.docker.localhost`)
+      traefik.http.services.auth.loadbalancer.server.port: "8080"
+    networks:
+      ems-net: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: C:\Users\George\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  device-service:
+    build:
+      context: C:\Users\George\source\repos\EMS-app
+      dockerfile: device-service/Dockerfile
+    container_name: device-service
+    depends_on:
+      sqlserver:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: deviceservice
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.device.entrypoints: web
+      traefik.http.routers.device.rule: Host(`device.docker.localhost`)
+      traefik.http.services.device.loadbalancer.server.port: "8080"
+    networks:
+      ems-net: null
+    restart: unless-stopped
+  sqlserver:
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Developer
+      SA_PASSWORD: sqlserver
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      ems-net: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1433"
+        protocol: tcp
+  traefik:
+    command:
+      - --api.insecure=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --providers.file.directory=/etc/traefik
+      - --providers.file.watch=true
+      - --accesslog=true
+      - --log.level=INFO
+      - --experimental.plugins.jwt-validation-middleware.modulename=github.com/legege/jwt-validation-middleware
+      - --experimental.plugins.jwt-validation-middleware.version=v0.2.1
+    container_name: traefik
+    image: traefik:v3.1
+    networks:
+      ems-net: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "80"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\source\repos\EMS-app\dynamic_conf.yml
+        target: /etc/traefik/dynamic_conf.yml
+        read_only: true
+        bind:
+          create_host_path: true
+  user-service:
+    build:
+      context: C:\Users\George\source\repos\EMS-app
+      dockerfile: user-service/Dockerfile
+    container_name: user-service
+    depends_on:
+      sqlserver:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: userservice
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.user.entrypoints: web
+      traefik.http.routers.user.middlewares: my-jwt-middleware@file
+      traefik.http.routers.user.rule: Host(`user.docker.localhost`)
+      traefik.http.services.user.loadbalancer.server.port: "8080"
+    networks:
+      ems-net: null
+    restart: unless-stopped
+networks:
+  ems-net:
+    name: dockercompose1163020246386950322_ems-net
+    driver: bridge

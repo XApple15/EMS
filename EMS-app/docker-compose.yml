@@ -1,0 +1,139 @@
+﻿version: "3.8"
+
+services:
+    
+  frontend:
+    build:
+      context: ../EMS-app-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    container_name: react-vite-app
+
+
+
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+          - "5672:5672"     # AMQP protocol port
+          - "15672:15672"   # Management UI
+    environment:
+          RABBITMQ_DEFAULT_USER: admin
+          RABBITMQ_DEFAULT_PASS: admin123
+    volumes:
+          - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+          - ems-network
+    labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.rabbitmq.rule=Host(`rabbitmq.docker.localhost`)"
+          - "traefik.http.routers.rabbitmq.entrypoints=web"
+          - "traefik.http.services.rabbitmq.loadbalancer.server.port=15672"
+
+
+
+  traefik:
+    image: traefik:v3.1
+    container_name: traefik
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--providers.file.directory=/etc/traefik"
+      - "--providers.file.watch=true"
+      - "--accesslog=true"
+      - "--log.level=INFO"
+      - "--experimental.plugins.jwt-validation-middleware.modulename=github.com/legege/jwt-validation-middleware"
+      - "--experimental.plugins.jwt-validation-middleware.version=v0.2.1"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - "./traefik:/etc/traefik:ro"
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=sqlserver
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+  auth-service:
+    image: ${DOCKER_REGISTRY-}authservice
+    build:
+      context: .
+      dockerfile: auth-service/Dockerfile
+    container_name: auth-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.auth.rule=Host(`auth.docker.localhost`)"
+      - "traefik.http.routers.auth.entrypoints=web"
+      - "traefik.http.services.auth.loadbalancer.server.port=8080"
+      - "traefik.http.routers.auth.middlewares=cors-headers@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+  user-service:
+    image: ${DOCKER_REGISTRY-}userservice
+    build:
+      context: .
+      dockerfile: user-service/Dockerfile
+    container_name: user-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.user.rule=Host(`user.docker.localhost`)"
+      - "traefik.http.routers.user.entrypoints=web"
+      - "traefik.http.services.user.loadbalancer.server.port=8080"
+      - "traefik.http.routers.user.middlewares=cors-headers@file,my-jwt-middleware@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+  device-service:
+    image: ${DOCKER_REGISTRY-}deviceservice
+    build:
+      context: .
+      dockerfile: device-service/Dockerfile
+    container_name: device-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.device.rule=Host(`device.docker.localhost`)"
+      - "traefik.http.routers.device.entrypoints=web"
+      - "traefik.http.services.device.loadbalancer.server.port=8080"
+      - "traefik.http.routers.device.middlewares=cors-headers@file,my-jwt-middleware@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+networks:
+  ems-net:
+    driver: bridge
