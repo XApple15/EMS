@@ -11,5 +11,7 @@ namespace auth_service.Model.DTO
         [DataType(DataType.Password)]
         public string Password { get; set; }
         public string[] Roles { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
     }
 }

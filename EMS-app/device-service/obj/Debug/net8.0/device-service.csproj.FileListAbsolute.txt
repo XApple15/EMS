@@ -575,9 +575,9 @@ C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/device-se
 C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/device-service/obj/Debug/net8.0/device-service.genruntimeconfig.cache
 C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/device-service/obj/Debug/net8.0/ref/device-service.dll
 C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/device-service/obj/Debug/net8.0/device-service.sourcelink.json
+/home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/spa.proxy.json
 /home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/appsettings.Development.json
 /home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/appsettings.json
-/home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/spa.proxy.json
 /home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/device-service.staticwebassets.endpoints.json
 /home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/device-service
 /home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/device-service.deps.json

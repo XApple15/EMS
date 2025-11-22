@@ -4,8 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text;
+using user_service.BackgroundServices;
 using user_service.Data;
 using user_service.Implementation;
+using user_service.Infrastructure.Messaging;
 using user_service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,13 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IUserService, UserService>();
 
+// Configure RabbitMQ
+builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
+builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
+builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
+
+// Add background service for consuming events
+builder.Services.AddHostedService<UserRegisteredConsumerService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

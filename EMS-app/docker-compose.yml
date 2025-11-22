@@ -88,8 +88,10 @@ services:
       - ASPNETCORE_URLS=http://+:8080
     depends_on:
       - sqlserver
+      - rabbitmq
     networks:
       - ems-net
+      - ems-network
     restart: unless-stopped
 
   user-service:
@@ -109,8 +111,10 @@ services:
       - ASPNETCORE_URLS=http://+:8080
     depends_on:
       - sqlserver
+      - rabbitmq
     networks:
       - ems-net
+      - ems-network
     restart: unless-stopped
 
   device-service:
@@ -137,3 +141,8 @@ services:
 networks:
   ems-net:
     driver: bridge
+  ems-network:
+    driver: bridge
+
+volumes:
+  rabbitmq_data:
