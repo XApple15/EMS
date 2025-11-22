@@ -1,0 +1,111 @@
+using Microsoft.EntityFrameworkCore;
+using Shared.Events;
+using user_service.Data;
+using user_service.Infrastructure.Messaging;
+using user_service.Model;
+
+namespace user_service.BackgroundServices
+{
+    /// <summary>
+    /// Background service that consumes UserRegistered events from RabbitMQ
+    /// </summary>
+    public class UserRegisteredConsumerService : BackgroundService
+    {
+        private readonly IServiceProvider _serviceProvider;
+        private readonly IEventConsumer _eventConsumer;
+        private readonly ILogger<UserRegisteredConsumerService> _logger;
+
+        public UserRegisteredConsumerService(
+            IServiceProvider serviceProvider,
+            IEventConsumer eventConsumer,
+            ILogger<UserRegisteredConsumerService> logger)
+        {
+            _serviceProvider = serviceProvider;
+            _eventConsumer = eventConsumer;
+            _logger = logger;
+        }
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            _logger.LogInformation("UserRegisteredConsumerService starting...");
+
+            try
+            {
+                await _eventConsumer.StartConsumingAsync<UserRegisteredEvent>(
+                    routingKey: "user.registered",
+                    handler: HandleUserRegisteredEventAsync,
+                    cancellationToken: stoppingToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Fatal error in UserRegisteredConsumerService");
+            }
+        }
+
+        /// <summary>
+        /// Handles UserRegistered events by creating user profiles
+        /// </summary>
+        /// <param name="event">The UserRegistered event</param>
+        /// <returns>True if processing succeeded, false to requeue</returns>
+        private async Task<bool> HandleUserRegisteredEventAsync(UserRegisteredEvent @event)
+        {
+            try
+            {
+                _logger.LogInformation(
+                    "Processing UserRegistered event: UserId={UserId}, Email={Email}, CorrelationId={CorrelationId}",
+                    @event.UserId, @event.Email, @event.CorrelationId);
+
+                using var scope = _serviceProvider.CreateScope();
+                var dbContext = scope.ServiceProvider.GetRequiredService<UserDButils>();
+
+                // Check if user already exists (idempotency)
+                var existingUser = await dbContext.Users
+                    .FirstOrDefaultAsync(u => u.AuthId.ToString() == @event.UserId);
+
+                if (existingUser != null)
+                {
+                    _logger.LogInformation(
+                        "User already exists, skipping: UserId={UserId}, CorrelationId={CorrelationId}",
+                        @event.UserId, @event.CorrelationId);
+                    return true; // Already processed
+                }
+
+                // Create new user profile
+                var user = new User
+                {
+                    Id = Guid.NewGuid(),
+                    AuthId = Guid.Parse(@event.UserId),
+                    Username = @event.Username,
+                    Email = @event.Email,
+                    FirstName = @event.FirstName,
+                    LastName = @event.LastName,
+                    Address = string.Empty // Default value
+                };
+
+                dbContext.Users.Add(user);
+                await dbContext.SaveChangesAsync();
+
+                _logger.LogInformation(
+                    "User profile created successfully: UserId={UserId}, ProfileId={ProfileId}, CorrelationId={CorrelationId}",
+                    @event.UserId, user.Id, @event.CorrelationId);
+
+                return true; // Success
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "Failed to process UserRegistered event: UserId={UserId}, CorrelationId={CorrelationId}",
+                    @event.UserId, @event.CorrelationId);
+
+                // Return false to requeue the message
+                return false;
+            }
+        }
+
+        public override Task StopAsync(CancellationToken cancellationToken)
+        {
+            _logger.LogInformation("UserRegisteredConsumerService stopping...");
+            return base.StopAsync(cancellationToken);
+        }
+    }
+}

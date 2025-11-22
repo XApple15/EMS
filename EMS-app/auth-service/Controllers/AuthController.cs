@@ -1,4 +1,5 @@
 ﻿using auth_service.Data;
+using auth_service.Infrastructure.Messaging;
 using auth_service.Interfaces;
 using auth_service.Model.Domain;
 using auth_service.Model.DTO;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Shared.Events;
 using System.Security.Claims;
 
 namespace auth_service.Controllers
@@ -20,14 +22,20 @@ namespace auth_service.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ITokenRepository _tokenRepository;
         private readonly AuthDButils _dbContext;
+        private readonly IEventPublisher _eventPublisher;
+        private readonly ILogger<AuthController> _logger;
 
         public AuthController(UserManager<ApplicationUser> userManager,
                               ITokenRepository tokenRepository,
-                              AuthDButils dbContext)
+                              AuthDButils dbContext,
+                              IEventPublisher eventPublisher,
+                              ILogger<AuthController> logger)
         {
             _userManager = userManager;
             _tokenRepository = tokenRepository;
             _dbContext = dbContext;
+            _eventPublisher = eventPublisher;
+            _logger = logger;
         }
 
         /// <summary>
@@ -78,10 +86,42 @@ namespace auth_service.Controllers
 
                 await transaction.CommitAsync();
 
+                // Generate correlation ID for tracing
+                var correlationId = Guid.NewGuid().ToString();
+
+                // Publish UserRegistered event
+                try
+                {
+                    var userRegisteredEvent = new UserRegisteredEvent
+                    {
+                        UserId = identityUser.Id,
+                        Email = identityUser.Email ?? string.Empty,
+                        Username = identityUser.UserName ?? string.Empty,
+                        FirstName = registerRequestDTO.FirstName ?? string.Empty,
+                        LastName = registerRequestDTO.LastName ?? string.Empty,
+                        RegisteredAt = DateTime.UtcNow,
+                        CorrelationId = correlationId
+                    };
+
+                    await _eventPublisher.PublishAsync(userRegisteredEvent, "user.registered");
+
+                    _logger.LogInformation(
+                        "User registered and event published: UserId={UserId}, CorrelationId={CorrelationId}",
+                        identityUser.Id, correlationId);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, 
+                        "Failed to publish UserRegistered event for user {UserId}, CorrelationId={CorrelationId}",
+                        identityUser.Id, correlationId);
+                    // Continue - user is created but event publishing failed
+                }
+
                 return Ok(new
                 {
                     message = "User created successfully",
-                    id = identityUser.Id
+                    id = identityUser.Id,
+                    correlationId = correlationId
                 });
             }
             catch (Exception ex)

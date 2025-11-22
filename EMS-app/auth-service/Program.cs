@@ -1,4 +1,5 @@
 using auth_service.Data;
+using auth_service.Infrastructure.Messaging;
 using auth_service.Interfaces;
 using auth_service.Model.Domain;
 using auth_service.Repository;
@@ -73,6 +74,11 @@ builder.Services.AddDbContext<AuthDButils>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("EMSAuthConnString")));
 
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+
+// Configure RabbitMQ
+builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
+builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
+builder.Services.AddScoped<IEventPublisher, RabbitMqEventPublisher>();
 
 builder.Services.AddIdentityCore<ApplicationUser>()
     .AddRoles<IdentityRole>()

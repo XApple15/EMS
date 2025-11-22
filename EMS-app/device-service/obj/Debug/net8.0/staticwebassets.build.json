@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "npN+B6BBpr31dN5iTnk77SVJZ61MU2sDrjw1rb93u08=",
-  "Source": "device-service",
-  "BasePath": "_content/device-service",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"jqppVgX5zzGAB0HoLv7XbomIiqKoI/vdWTvcolE5PxM=","Source":"device-service","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
