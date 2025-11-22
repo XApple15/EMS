@@ -8,7 +8,7 @@ namespace auth_service.Infrastructure.Messaging
         /// <summary>
         /// RabbitMQ host name or IP address
         /// </summary>
-        public string HostName { get; set; } = "localhost";
+        public string HostName { get; set; } = "rabbitmq";
 
         /// <summary>
         /// RabbitMQ port number
@@ -18,12 +18,12 @@ namespace auth_service.Infrastructure.Messaging
         /// <summary>
         /// RabbitMQ username for authentication
         /// </summary>
-        public string UserName { get; set; } = "guest";
+        public string UserName { get; set; } = "admin";
 
         /// <summary>
         /// RabbitMQ password for authentication
         /// </summary>
-        public string Password { get; set; } = "guest";
+        public string Password { get; set; } = "admin123";
 
         /// <summary>
         /// Exchange name for topic-based messaging

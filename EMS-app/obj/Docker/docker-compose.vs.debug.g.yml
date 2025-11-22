@@ -14,8 +14,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\auth-service:/app:rw
-      - C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app:/src:rw
+      - C:\Users\George\source\repos\CoopyEms\EMS-app\auth-service:/app:rw
+      - C:\Users\George\source\repos\CoopyEms\EMS-app:/src:rw
       - C:\Users\George\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\George\.nuget\packages:/.nuget/packages:ro
       - C:\Users\George\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
@@ -47,8 +47,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service:/app:rw
-      - C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app:/src:rw
+      - C:\Users\George\source\repos\CoopyEms\EMS-app\device-service:/app:rw
+      - C:\Users\George\source\repos\CoopyEms\EMS-app:/src:rw
       - C:\Users\George\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\George\.nuget\packages:/.nuget/packages:ro
       - C:\Users\George\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
@@ -81,8 +81,8 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\user-service:/app:rw
-      - C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app:/src:rw
+      - C:\Users\George\source\repos\CoopyEms\EMS-app\user-service:/app:rw
+      - C:\Users\George\source\repos\CoopyEms\EMS-app:/src:rw
       - C:\Users\George\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\George\.nuget\packages:/.nuget/packages:ro
       - C:\Users\George\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro

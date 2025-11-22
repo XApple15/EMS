@@ -8,7 +8,7 @@ namespace user_service.Infrastructure.Messaging
         /// <summary>
         /// RabbitMQ host name or IP address
         /// </summary>
-        public string HostName { get; set; } = "localhost";
+        public string HostName { get; set; } = "rabbitmq";
 
         /// <summary>
         /// RabbitMQ port number

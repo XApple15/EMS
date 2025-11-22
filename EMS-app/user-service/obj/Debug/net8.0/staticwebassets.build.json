@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"G2E9ML2CbBQTgO4JcT+f0djgYiSlVPFXqV8sBGHiT5A=","Source":"user-service","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "pP56qYpAgM0bVs/z9euGC4mtO52qE07obP8OE3WT5Vg=",
+  "Source": "user-service",
+  "BasePath": "_content/user-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

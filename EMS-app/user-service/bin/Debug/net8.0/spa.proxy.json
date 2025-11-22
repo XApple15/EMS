@@ -3,7 +3,7 @@
 "ServerUrl": "",
 "RedirectUrl": "",
 "LaunchCommand": "",
-"WorkingDirectory": "/home/runner/work/EMS/EMS/EMS-app/user-service",
+"WorkingDirectory": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
