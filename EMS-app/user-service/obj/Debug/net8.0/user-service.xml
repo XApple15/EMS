@@ -285,5 +285,17 @@
         <member name="M:user_service.Migrations.addeduser.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:user_service.Migrations.AddUserProfileFields">
+            <inheritdoc />
+        </member>
+        <member name="M:user_service.Migrations.AddUserProfileFields.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:user_service.Migrations.AddUserProfileFields.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:user_service.Migrations.AddUserProfileFields.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>
