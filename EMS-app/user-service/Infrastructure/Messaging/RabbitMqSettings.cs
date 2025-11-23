@@ -18,12 +18,12 @@ namespace user_service.Infrastructure.Messaging
         /// <summary>
         /// RabbitMQ username for authentication
         /// </summary>
-        public string UserName { get; set; } = "guest";
+        public string UserName { get; set; } = "admin";
 
         /// <summary>
         /// RabbitMQ password for authentication
         /// </summary>
-        public string Password { get; set; } = "guest";
+        public string Password { get; set; } = "admin123";
 
         /// <summary>
         /// Exchange name for topic-based messaging

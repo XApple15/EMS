@@ -95,10 +95,8 @@ namespace auth_service.Controllers
                     var userRegisteredEvent = new UserRegisteredEvent
                     {
                         UserId = identityUser.Id,
-                        Email = identityUser.Email ?? string.Empty,
                         Username = identityUser.UserName ?? string.Empty,
-                        FirstName = registerRequestDTO.FirstName ?? string.Empty,
-                        LastName = registerRequestDTO.LastName ?? string.Empty,
+                        Address = registerRequestDTO.Address ?? string.Empty,
                         RegisteredAt = DateTime.UtcNow,
                         CorrelationId = correlationId
                     };

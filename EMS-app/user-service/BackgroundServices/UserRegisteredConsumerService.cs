@@ -52,16 +52,16 @@ namespace user_service.BackgroundServices
             try
             {
                 _logger.LogInformation(
-                    "Processing UserRegistered event: UserId={UserId}, Email={Email}, CorrelationId={CorrelationId}",
-                    @event.UserId, @event.Email, @event.CorrelationId);
+                    "Processing UserRegistered event: UserId={UserId},  CorrelationId={CorrelationId}",
+                    @event.UserId, @event.CorrelationId);
 
                 using var scope = _serviceProvider.CreateScope();
                 var dbContext = scope.ServiceProvider.GetRequiredService<UserDButils>();
-
+                _logger.LogInformation("Before checking existing user");
                 // Check if user already exists (idempotency)
                 var existingUser = await dbContext.Users
                     .FirstOrDefaultAsync(u => u.AuthId.ToString() == @event.UserId);
-
+                _logger.LogInformation("After check existing user");
                 if (existingUser != null)
                 {
                     _logger.LogInformation(
@@ -76,10 +76,7 @@ namespace user_service.BackgroundServices
                     Id = Guid.NewGuid(),
                     AuthId = Guid.Parse(@event.UserId),
                     Username = @event.Username,
-                    Email = @event.Email,
-                    FirstName = @event.FirstName,
-                    LastName = @event.LastName,
-                    Address = string.Empty // Default value
+                    Address = @event.Address
                 };
 
                 dbContext.Users.Add(user);

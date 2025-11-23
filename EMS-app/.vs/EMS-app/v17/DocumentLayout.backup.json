@@ -7,52 +7,44 @@
       "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\backgroundservices\\userregisteredconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\shared.events\\userregisteredevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|solutionrelative:shared.events\\userregisteredevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\model\\adduserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\model\\adduserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\data\\userdbutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\data\\userdbutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\model\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\model\\dto\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D344CC35-D135-44EA-BC88-80D5D56BF369}|docker-compose.dcproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D344CC35-D135-44EA-BC88-80D5D56BF369}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\model\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\model\\dto\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{683A7AD2-E2D2-4AA5-B898-8C4A8095FAD6}|traefik{683A7AD2-E2D2-4AA5-B898-8C4A8095FAD6}|C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\traefik\\dynamic_conf.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{683A7AD2-E2D2-4AA5-B898-8C4A8095FAD6}|traefik{683A7AD2-E2D2-4AA5-B898-8C4A8095FAD6}|solutionrelative:traefik\\dynamic_conf.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\infrastructure\\messaging\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\infrastructure\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,48 +55,28 @@
       "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\shared.events\\userregisteredevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|solutionrelative:shared.events\\userregisteredevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D344CC35-D135-44EA-BC88-80D5D56BF369}|docker-compose.dcproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D344CC35-D135-44EA-BC88-80D5D56BF369}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\monitoring-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|solutionrelative:monitoring-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\device-service\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\controllers\\devicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\auth-service\\auth-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\auth-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\coopyems\\ems-app\\user-service\\user-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\user-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -114,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 192,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,30 +110,217 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserRegisteredConsumerService.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "RelativeDocumentMoniker": "user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "RelativeToolTip": "user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "auth-service\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "auth-service\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAYwGEAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T12:19:23.381Z",
+              "WhenOpened": "2025-11-23T11:02:39.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
+              "Title": "LoginResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Model\\DTO\\LoginResponseDTO.cs",
+              "RelativeDocumentMoniker": "auth-service\\Model\\DTO\\LoginResponseDTO.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Model\\DTO\\LoginResponseDTO.cs",
+              "RelativeToolTip": "auth-service\\Model\\DTO\\LoginResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T11:02:30.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Implementation\\UserService.cs",
+              "RelativeDocumentMoniker": "user-service\\Implementation\\UserService.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Implementation\\UserService.cs",
+              "RelativeToolTip": "user-service\\Implementation\\UserService.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAswFEAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:55:48.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RabbitMqEventPublisher.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
+              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
+              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:52:41.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RabbitMqConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:52:36.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "auth-service\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\appsettings.Development.json",
+              "RelativeToolTip": "auth-service\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-23T10:50:03.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "user-service\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\appsettings.Development.json",
+              "RelativeToolTip": "user-service\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-23T10:49:43.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RabbitMqEventConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
+              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
+              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:44:58.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RabbitMqConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:44:57.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IRabbitMqConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
+              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
+              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:44:56.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IEventConsumer.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
+              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
+              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:44:55.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "user-service\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Controllers\\UserController.cs",
               "RelativeToolTip": "user-service\\Controllers\\UserController.cs",
-              "ViewState": "AgIAABYBAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T12:18:58.097Z",
+              "WhenOpened": "2025-11-23T10:44:51.467Z",
               "EditorCaption": ""
             },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAwwGsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-11-22T13:41:54.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegisterRequestDTO.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Model\\DTO\\RegisterRequestDTO.cs",
+              "RelativeDocumentMoniker": "auth-service\\Model\\DTO\\RegisterRequestDTO.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Model\\DTO\\RegisterRequestDTO.cs",
+              "RelativeToolTip": "auth-service\\Model\\DTO\\RegisterRequestDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T11:01:50.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\appsettings.json",
+              "RelativeDocumentMoniker": "user-service\\appsettings.json",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\appsettings.json",
+              "RelativeToolTip": "user-service\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T13:38:18.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Program.cs",
+              "RelativeDocumentMoniker": "user-service\\Program.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Program.cs",
+              "RelativeToolTip": "user-service\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T13:36:36.1Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 192,
+          "SelectedChildIndex": 4,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -170,307 +329,12 @@
               "RelativeDocumentMoniker": "user-service\\Model\\User.cs",
               "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Model\\User.cs",
               "RelativeToolTip": "user-service\\Model\\User.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T12:18:51.178Z",
+              "WhenOpened": "2025-11-23T10:58:28.628Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Model\\AddUserDTO.cs",
-              "RelativeDocumentMoniker": "user-service\\Model\\AddUserDTO.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Model\\AddUserDTO.cs",
-              "RelativeToolTip": "user-service\\Model\\AddUserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T12:18:47.792Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserDButils.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Data\\UserDButils.cs",
-              "RelativeDocumentMoniker": "user-service\\Data\\UserDButils.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Data\\UserDButils.cs",
-              "RelativeToolTip": "user-service\\Data\\UserDButils.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T12:18:40.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\appsettings.json",
-              "RelativeDocumentMoniker": "user-service\\appsettings.json",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\appsettings.json",
-              "RelativeToolTip": "user-service\\appsettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-22T11:53:52.095Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\appsettings.json",
-              "RelativeDocumentMoniker": "auth-service\\appsettings.json",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\appsettings.json",
-              "RelativeToolTip": "auth-service\\appsettings.json",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-22T11:53:38.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RabbitMqSettings.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:50:59.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RabbitMqEventPublisher.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:50:54.952Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "RabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:50:50.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IRabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:50:48.347Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IEventPublisher.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:50:45.955Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UserRegisteredEvent.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\Shared.Events\\UserRegisteredEvent.cs",
-              "RelativeDocumentMoniker": "Shared.Events\\UserRegisteredEvent.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\Shared.Events\\UserRegisteredEvent.cs",
-              "RelativeToolTip": "Shared.Events\\UserRegisteredEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T00:31:34.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RabbitMqSettings.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T00:30:53.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RabbitMqEventConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T00:30:51.083Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IRabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T00:30:48.36Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IEventConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T00:30:46.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\monitoring-service\\Program.cs",
-              "RelativeDocumentMoniker": "monitoring-service\\Program.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\monitoring-service\\Program.cs",
-              "RelativeToolTip": "monitoring-service\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T14:20:34.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "DeviceController.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\device-service\\Controllers\\DeviceController.cs",
-              "RelativeDocumentMoniker": "device-service\\Controllers\\DeviceController.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\device-service\\Controllers\\DeviceController.cs",
-              "RelativeToolTip": "device-service\\Controllers\\DeviceController.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAkwI0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T14:23:41.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "dynamic_conf.yml",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\traefik\\dynamic_conf.yml",
-              "RelativeDocumentMoniker": "traefik\\dynamic_conf.yml",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\traefik\\dynamic_conf.yml",
-              "RelativeToolTip": "traefik\\dynamic_conf.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-11-04T12:43:50.15Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAwwB4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-11-04T12:43:38.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Program.cs",
-              "RelativeDocumentMoniker": "user-service\\Program.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\Program.cs",
-              "RelativeToolTip": "user-service\\Program.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAIwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T20:26:34.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "user-service.csproj",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\user-service.csproj",
-              "RelativeDocumentMoniker": "user-service\\user-service.csproj",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\user-service.csproj",
-              "RelativeToolTip": "user-service\\user-service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-03T20:26:24.736Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "auth-service\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "auth-service\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAYwG0AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T20:04:45.724Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Program.cs",
-              "RelativeDocumentMoniker": "auth-service\\Program.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\Program.cs",
-              "RelativeToolTip": "auth-service\\Program.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAiwG0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T20:00:02.751Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "auth-service.csproj",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\auth-service.csproj",
-              "RelativeDocumentMoniker": "auth-service\\auth-service.csproj",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\auth-service.csproj",
-              "RelativeToolTip": "auth-service\\auth-service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-03T19:58:35.919Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 192,
-          "SelectedChildIndex": -1,
-          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
@@ -478,6 +342,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRegisteredEvent.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\Shared.Events\\UserRegisteredEvent.cs",
+              "RelativeDocumentMoniker": "Shared.Events\\UserRegisteredEvent.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\Shared.Events\\UserRegisteredEvent.cs",
+              "RelativeToolTip": "Shared.Events\\UserRegisteredEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:57:21.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRegisteredConsumerService.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
+              "RelativeDocumentMoniker": "user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
+              "RelativeToolTip": "user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T10:44:38.864Z",
+              "EditorCaption": ""
             }
           ]
         }

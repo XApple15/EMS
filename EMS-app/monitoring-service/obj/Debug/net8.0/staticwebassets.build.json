@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"fjpEmAMHfspHZTxbxaFC20frL4vPJoK01VGL2B7SMBQ=","Source":"monitoring-service","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "8Z3kQDUAE/qvaMjwnGGjmOWBMH1lBrPsbdAKHBvVfoE=",
+  "Source": "monitoring-service",
+  "BasePath": "_content/monitoring-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

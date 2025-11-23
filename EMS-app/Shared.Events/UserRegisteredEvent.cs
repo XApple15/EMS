@@ -10,10 +10,7 @@ namespace Shared.Events
         /// </summary>
         public string UserId { get; set; } = string.Empty;
 
-        /// <summary>
-        /// User's email address
-        /// </summary>
-        public string Email { get; set; } = string.Empty;
+        
 
         /// <summary>
         /// User's username
@@ -21,14 +18,11 @@ namespace Shared.Events
         public string Username { get; set; } = string.Empty;
 
         /// <summary>
-        /// User's first name
+        /// User's  address
         /// </summary>
-        public string FirstName { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
-        /// <summary>
-        /// User's last name
-        /// </summary>
-        public string LastName { get; set; } = string.Empty;
+        
 
         /// <summary>
         /// Timestamp when the user was registered

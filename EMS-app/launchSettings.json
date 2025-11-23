@@ -4,7 +4,13 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "auth-service": "StartDebugging"
+        "auth-service": "StartDebugging",
+        "device-service": "StartDebugging",
+        "frontend": "StartWithoutDebugging",
+        "rabbitmq": "StartWithoutDebugging",
+        "sqlserver": "StartWithoutDebugging",
+        "traefik": "StartWithoutDebugging",
+        "user-service": "StartDebugging"
       }
     }
   }
