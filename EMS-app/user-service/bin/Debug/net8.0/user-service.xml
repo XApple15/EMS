@@ -9,6 +9,11 @@
             Background service that consumes UserRegistered events from RabbitMQ
             </summary>
         </member>
+        <member name="F:user_service.BackgroundServices.UserRegisteredConsumerService.DeviceUserCreateRoutingKey">
+            <summary>
+            Routing key for device-service user creation events
+            </summary>
+        </member>
         <member name="M:user_service.BackgroundServices.UserRegisteredConsumerService.HandleUserRegisteredEventAsync(Shared.Events.UserRegisteredEvent)">
             <summary>
             Handles UserRegistered events by creating user profiles
@@ -187,6 +192,20 @@
             <param name="cancellationToken">Cancellation token for stopping consumption</param>
             <returns>Task representing the async operation</returns>
         </member>
+        <member name="T:user_service.Infrastructure.Messaging.IEventPublisher">
+            <summary>
+            Interface for publishing events to message broker
+            </summary>
+        </member>
+        <member name="M:user_service.Infrastructure.Messaging.IEventPublisher.PublishAsync``1(``0,System.String)">
+            <summary>
+            Publishes an event to the message broker
+            </summary>
+            <typeparam name="T">Type of event to publish</typeparam>
+            <param name="event">Event object to publish</param>
+            <param name="routingKey">Routing key for topic-based routing</param>
+            <returns>Task representing the async operation</returns>
+        </member>
         <member name="T:user_service.Infrastructure.Messaging.IRabbitMqConnectionFactory">
             <summary>
             Factory for creating and managing RabbitMQ connections
@@ -222,6 +241,19 @@
             <param name="routingKey">Routing key pattern to bind to</param>
             <param name="handler">Handler function that returns true on success, false to requeue</param>
             <param name="cancellationToken">Cancellation token for stopping consumption</param>
+        </member>
+        <member name="T:user_service.Infrastructure.Messaging.RabbitMqEventPublisher">
+            <summary>
+            RabbitMQ implementation of event publisher with retry logic and error handling
+            </summary>
+        </member>
+        <member name="M:user_service.Infrastructure.Messaging.RabbitMqEventPublisher.PublishAsync``1(``0,System.String)">
+            <summary>
+            Publishes an event to RabbitMQ with retry logic
+            </summary>
+            <typeparam name="T">Type of event to publish</typeparam>
+            <param name="event">Event object to publish</param>
+            <param name="routingKey">Routing key for topic-based routing</param>
         </member>
         <member name="T:user_service.Infrastructure.Messaging.RabbitMqSettings">
             <summary>

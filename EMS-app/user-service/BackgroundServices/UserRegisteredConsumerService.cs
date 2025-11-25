@@ -13,15 +13,23 @@ namespace user_service.BackgroundServices
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly IEventConsumer _eventConsumer;
+        private readonly IEventPublisher _eventPublisher;
         private readonly ILogger<UserRegisteredConsumerService> _logger;
+
+        /// <summary>
+        /// Routing key for device-service user creation events
+        /// </summary>
+        public const string DeviceUserCreateRoutingKey = "user.device.create";
 
         public UserRegisteredConsumerService(
             IServiceProvider serviceProvider,
             IEventConsumer eventConsumer,
+            IEventPublisher eventPublisher,
             ILogger<UserRegisteredConsumerService> logger)
         {
             _serviceProvider = serviceProvider;
             _eventConsumer = eventConsumer;
+            _eventPublisher = eventPublisher;
             _logger = logger;
         }
 
@@ -85,6 +93,34 @@ namespace user_service.BackgroundServices
                 _logger.LogInformation(
                     "User profile created successfully: UserId={UserId}, ProfileId={ProfileId}, CorrelationId={CorrelationId}",
                     @event.UserId, user.Id, @event.CorrelationId);
+
+                // Publish DeviceUserCreateRequested event for device-service
+                try
+                {
+                    var deviceUserEvent = new DeviceUserCreateRequested
+                    {
+                        UserId = user.AuthId,
+                        Email = @event.Username, // Username is typically email in this system
+                        Username = @event.Username,
+                        Address = @event.Address,
+                        RegisteredAt = @event.RegisteredAt,
+                        CorrelationId = @event.CorrelationId
+                    };
+
+                    await _eventPublisher.PublishAsync(deviceUserEvent, DeviceUserCreateRoutingKey);
+
+                    _logger.LogInformation(
+                        "Published DeviceUserCreateRequested event: UserId={UserId}, CorrelationId={CorrelationId}",
+                        user.AuthId, @event.CorrelationId);
+                }
+                catch (Exception publishEx)
+                {
+                    _logger.LogError(publishEx,
+                        "Failed to publish DeviceUserCreateRequested event for user {UserId}, CorrelationId={CorrelationId}. User was created but device-service notification failed.",
+                        user.AuthId, @event.CorrelationId);
+                    // Continue - user is created but event publishing failed
+                    // The user creation should not be rolled back due to downstream publishing failure
+                }
 
                 return true; // Success
             }

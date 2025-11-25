@@ -964,3 +964,6 @@ C:/Users/George/source/repos/CoopyEms/EMS-app/device-service/obj/Debug/net8.0/de
 C:/Users/George/source/repos/CoopyEms/EMS-app/device-service/obj/Debug/net8.0/device-service.pdb
 C:/Users/George/source/repos/CoopyEms/EMS-app/device-service/obj/Debug/net8.0/device-service.genruntimeconfig.cache
 C:/Users/George/source/repos/CoopyEms/EMS-app/device-service/obj/Debug/net8.0/ref/device-service.dll
+/home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/RabbitMQ.Client.dll
+/home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/Shared.Events.dll
+/home/runner/work/EMS/EMS/EMS-app/device-service/bin/Debug/net8.0/Shared.Events.pdb

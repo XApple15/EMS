@@ -4,6 +4,30 @@
         <name>device-service</name>
     </assembly>
     <members>
+        <member name="T:device_service.BackgroundServices.DeviceUserCreatedConsumerService">
+            <summary>
+            Background service that consumes DeviceUserCreateRequested events from RabbitMQ
+            and creates user records in the device-service database
+            </summary>
+        </member>
+        <member name="F:device_service.BackgroundServices.DeviceUserCreatedConsumerService.DeviceUserCreateRoutingKey">
+            <summary>
+            Routing key for device user creation events (must match user-service publisher)
+            </summary>
+        </member>
+        <member name="M:device_service.BackgroundServices.DeviceUserCreatedConsumerService.HandleDeviceUserCreateRequestedAsync(Shared.Events.DeviceUserCreateRequested)">
+            <summary>
+            Handles DeviceUserCreateRequested events by creating user records in device-service database.
+            This handler is idempotent - duplicate events will not create duplicate records.
+            </summary>
+            <param name="event">The DeviceUserCreateRequested event</param>
+            <returns>True if processing succeeded, false to requeue</returns>
+        </member>
+        <member name="M:device_service.BackgroundServices.DeviceUserCreatedConsumerService.IsUniqueConstraintViolation(Microsoft.EntityFrameworkCore.DbUpdateException)">
+            <summary>
+            Determines if the exception is due to a unique constraint violation
+            </summary>
+        </member>
         <member name="T:device_service.Controllers.DeviceController">
             <summary>
             Device management and energy consumption tracking endpoints
@@ -152,6 +176,107 @@
             <response code="401">Unauthorized - Admin role required</response>
             <response code="404">Device not found</response>
         </member>
+        <member name="T:device_service.Infrastructure.Messaging.IEventConsumer">
+            <summary>
+            Interface for consuming events from message broker
+            </summary>
+        </member>
+        <member name="M:device_service.Infrastructure.Messaging.IEventConsumer.StartConsumingAsync``1(System.String,System.Func{``0,System.Threading.Tasks.Task{System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Starts consuming messages from the specified queue with the given routing key
+            </summary>
+            <typeparam name="T">Type of event to consume</typeparam>
+            <param name="routingKey">Routing key pattern to bind to (e.g., "user.#")</param>
+            <param name="handler">Handler function to process received events</param>
+            <param name="cancellationToken">Cancellation token for stopping consumption</param>
+            <returns>Task representing the async operation</returns>
+        </member>
+        <member name="T:device_service.Infrastructure.Messaging.IRabbitMqConnectionFactory">
+            <summary>
+            Factory for creating and managing RabbitMQ connections
+            </summary>
+        </member>
+        <member name="M:device_service.Infrastructure.Messaging.IRabbitMqConnectionFactory.CreateConnection">
+            <summary>
+            Creates a new RabbitMQ connection
+            </summary>
+            <returns>A new IConnection instance</returns>
+        </member>
+        <member name="T:device_service.Infrastructure.Messaging.RabbitMqConnectionFactory">
+            <summary>
+            Factory for creating RabbitMQ connections with automatic recovery and connection pooling
+            </summary>
+        </member>
+        <member name="M:device_service.Infrastructure.Messaging.RabbitMqConnectionFactory.CreateConnection">
+            <summary>
+            Creates or returns existing RabbitMQ connection
+            </summary>
+            <returns>A thread-safe IConnection instance</returns>
+        </member>
+        <member name="T:device_service.Infrastructure.Messaging.RabbitMqEventConsumer">
+            <summary>
+            RabbitMQ implementation of event consumer with message acknowledgment and error handling
+            </summary>
+        </member>
+        <member name="M:device_service.Infrastructure.Messaging.RabbitMqEventConsumer.StartConsumingAsync``1(System.String,System.Func{``0,System.Threading.Tasks.Task{System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Starts consuming messages from RabbitMQ with manual acknowledgment
+            </summary>
+            <typeparam name="T">Type of event to consume</typeparam>
+            <param name="routingKey">Routing key pattern to bind to</param>
+            <param name="handler">Handler function that returns true on success, false to requeue</param>
+            <param name="cancellationToken">Cancellation token for stopping consumption</param>
+        </member>
+        <member name="T:device_service.Infrastructure.Messaging.RabbitMqSettings">
+            <summary>
+            Configuration settings for RabbitMQ connection and messaging
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.HostName">
+            <summary>
+            RabbitMQ host name or IP address
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.Port">
+            <summary>
+            RabbitMQ port number
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.UserName">
+            <summary>
+            RabbitMQ username for authentication
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.Password">
+            <summary>
+            RabbitMQ password for authentication
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.ExchangeName">
+            <summary>
+            Exchange name for topic-based messaging
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.ExchangeType">
+            <summary>
+            Exchange type (topic, direct, fanout, headers)
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.QueueName">
+            <summary>
+            Queue name for this consumer
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.MaxRetryAttempts">
+            <summary>
+            Maximum number of retry attempts for operations
+            </summary>
+        </member>
+        <member name="P:device_service.Infrastructure.Messaging.RabbitMqSettings.RetryDelayMilliseconds">
+            <summary>
+            Initial delay in milliseconds between retry attempts
+            </summary>
+        </member>
         <member name="T:device_service.Migrations.addeddevice">
             <inheritdoc />
         </member>
@@ -174,6 +299,18 @@
             <inheritdoc />
         </member>
         <member name="M:device_service.Migrations.addeduserdb.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:device_service.Migrations.AddUniqueIndexOnAuthId">
+            <inheritdoc />
+        </member>
+        <member name="M:device_service.Migrations.AddUniqueIndexOnAuthId.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:device_service.Migrations.AddUniqueIndexOnAuthId.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:device_service.Migrations.AddUniqueIndexOnAuthId.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
