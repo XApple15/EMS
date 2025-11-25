@@ -66,6 +66,7 @@ const Register = () => {
         const authRequest = {
             email: formData.email,
             password: formData.password,
+            address : formData.address || '',
             roles: ['Client'],
         };
 
@@ -86,16 +87,7 @@ const Register = () => {
                 console.warn('Could not determine created auth id from response:', authData);
                 throw new Error('Registration succeeded but no auth id was returned by auth service.');
             }
-
-            const userRequest = {
-                AuthId: createdAuthId,
-                Username: formData.name,
-                Address: formData.address || '',
-            };
-
-            const userResp = await userClient.post('/api/user', userRequest);
-
-            console.log('Registration successful:', { auth: authData, user: userResp.data });
+         
 
             const jwt = authResp.data?.jwtToken ?? authResp.data?.token ?? null;
             if (jwt) {

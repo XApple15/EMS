@@ -5761,11 +5761,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\auth-service.csproj",
+      "projectUniqueName": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\auth-service.csproj",
       "projectName": "auth-service",
-      "projectPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\auth-service.csproj",
+      "projectPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\auth-service.csproj",
       "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\obj\\",
+      "outputPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5783,8 +5783,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\Shared.Events\\Shared.Events.csproj": {
-              "projectPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\Shared.Events\\Shared.Events.csproj"
+            "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\Shared.Events\\Shared.Events.csproj": {
+              "projectPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\Shared.Events\\Shared.Events.csproj"
             }
           }
         }

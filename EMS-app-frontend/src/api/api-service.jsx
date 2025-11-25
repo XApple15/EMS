@@ -34,24 +34,11 @@ export const userService = {
 
     createUser: async ({ name, email, password, roles = ['Client'], address = '' }) => {
         //  Create in Auth service
-        const authResp = await authClient.post('/auth/register', { email, password, roles });
+        const authResp = await authClient.post('/auth/register', { email, password, roles,address });
         const authData = authResp.data;
-        const createdAuthId =
-            authData?.id ??
-            authData?.user?.id ??
-            authData?.authId ??
-            authData?.userId ??
-            null;
+       
 
-        if (!createdAuthId) {
-            throw new Error('Auth service did not return created id');
-        }
-
-        // Create profile in User service
-        const profileDto = { AuthId: createdAuthId, Username: name, Address: address || '' };
-        const userResp = await userClient.post('/api/user', profileDto);
-
-        return { auth: authData, user: userResp.data };
+        return { auth: authData };
     },
 
     deleteUser: async (userId) => {

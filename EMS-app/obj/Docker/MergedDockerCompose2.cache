@@ -1,9 +1,15 @@
-name: dockercompose9367398606499593589
+name: dockercompose17504041737436154207
 services:
   auth-service:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
       dockerfile: auth-service/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: auth-service
     container_name: auth-service
     depends_on:
       rabbitmq:
@@ -12,6 +18,12 @@ services:
       sqlserver:
         condition: service_started
         required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_HTTP_PORTS: "8080"
@@ -19,6 +31,11 @@ services:
       ASPNETCORE_URLS: http://+:8080
     image: authservice
     labels:
+      com.microsoft.visual-studio.project-name: auth-service
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/auth-service.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
       traefik.enable: "true"
       traefik.http.routers.auth.entrypoints: web
       traefik.http.routers.auth.middlewares: cors-headers@file
@@ -34,33 +51,80 @@ services:
         target: 8081
         protocol: tcp
     restart: unless-stopped
+    tty: true
     volumes:
       - type: bind
-        source: C:\Users\George\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\George\AppData\Roaming\Microsoft\UserSecrets
         target: /home/app/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\George\AppData\Roaming\ASP.NET\Https
         target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
         read_only: true
         bind:
           create_host_path: true
   device-service:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
       dockerfile: device-service/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: device-service
     container_name: device-service
     depends_on:
       sqlserver:
         condition: service_started
         required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:8080
     image: deviceservice
     labels:
+      com.microsoft.visual-studio.project-name: device-service
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/device-service.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
       traefik.enable: "true"
       traefik.http.routers.device.entrypoints: web
       traefik.http.routers.device.middlewares: cors-headers@file,my-jwt-middleware@file
@@ -69,9 +133,52 @@ services:
     networks:
       ems-net: null
     restart: unless-stopped
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\George\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
   frontend:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app-frontend
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app-frontend
       dockerfile: Dockerfile
     container_name: react-vite-app
     networks:
@@ -93,7 +200,7 @@ services:
       traefik.http.routers.rabbitmq.rule: Host(`rabbitmq.docker.localhost`)
       traefik.http.services.rabbitmq.loadbalancer.server.port: "15672"
     networks:
-      ems-network: null
+      ems-net: null
     ports:
       - mode: ingress
         target: 5672
@@ -157,15 +264,21 @@ services:
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app\traefik
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\traefik
         target: /etc/traefik
         read_only: true
         bind:
           create_host_path: true
   user-service:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
       dockerfile: user-service/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: user-service
     container_name: user-service
     depends_on:
       rabbitmq:
@@ -174,28 +287,79 @@ services:
       sqlserver:
         condition: service_started
         required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:8080
     image: userservice
     labels:
+      com.microsoft.visual-studio.project-name: user-service
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/user-service.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
       traefik.enable: "true"
       traefik.http.routers.user.entrypoints: web
       traefik.http.routers.user.middlewares: cors-headers@file,my-jwt-middleware@file
       traefik.http.routers.user.rule: Host(`user.docker.localhost`)
       traefik.http.services.user.loadbalancer.server.port: "8080"
     networks:
-      ems-network: null
+      ems-net: null
     restart: unless-stopped
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\George\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\George\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
 networks:
   default:
-    name: dockercompose9367398606499593589_default
+    name: dockercompose17504041737436154207_default
   ems-net:
-    name: dockercompose9367398606499593589_ems-net
-    driver: bridge
-  ems-network:
-    name: dockercompose9367398606499593589_ems-network
+    name: dockercompose17504041737436154207_ems-net
     driver: bridge
 volumes:
   rabbitmq_data:
-    name: dockercompose9367398606499593589_rabbitmq_data
+    name: dockercompose17504041737436154207_rabbitmq_data

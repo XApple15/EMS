@@ -10,7 +10,7 @@ namespace device_service.Data
         }
 
         public DbSet<Device> Devices { get; set; }
-
+        public DbSet<User> Users { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

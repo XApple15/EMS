@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Uk/TRM2WmBk=",
+  "dgSpecHash": "RuxxJf0ncNM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\user-service\\user-service.csproj",
+  "projectFilePath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\user-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\George\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

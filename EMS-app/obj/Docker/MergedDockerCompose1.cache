@@ -1,8 +1,8 @@
-name: dockercompose9367398606499593589
+name: dockercompose17504041737436154207
 services:
   auth-service:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
       dockerfile: auth-service/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
@@ -69,12 +69,12 @@ services:
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app\auth-service
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\auth-service
         target: /app
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
         target: /src
         bind:
           create_host_path: true
@@ -115,7 +115,7 @@ services:
           create_host_path: true
   device-service:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
       dockerfile: device-service/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
@@ -158,12 +158,12 @@ services:
     tty: true
     volumes:
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app\device-service
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service
         target: /app
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
         target: /src
         bind:
           create_host_path: true
@@ -216,7 +216,7 @@ services:
           create_host_path: true
   frontend:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app-frontend
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app-frontend
       dockerfile: Dockerfile
     container_name: react-vite-app
     networks:
@@ -238,7 +238,7 @@ services:
       traefik.http.routers.rabbitmq.rule: Host(`rabbitmq.docker.localhost`)
       traefik.http.services.rabbitmq.loadbalancer.server.port: "15672"
     networks:
-      ems-network: null
+      ems-net: null
     ports:
       - mode: ingress
         target: 5672
@@ -302,14 +302,14 @@ services:
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app\traefik
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\traefik
         target: /etc/traefik
         read_only: true
         bind:
           create_host_path: true
   user-service:
     build:
-      context: C:\Users\George\source\repos\CoopyEms\EMS-app
+      context: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
       dockerfile: user-service/Dockerfile
       args:
         BUILD_CONFIGURATION: Debug
@@ -355,12 +355,12 @@ services:
     tty: true
     volumes:
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app\user-service
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\user-service
         target: /app
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\George\source\repos\CoopyEms\EMS-app
+        source: C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app
         target: /src
         bind:
           create_host_path: true
@@ -413,13 +413,10 @@ services:
           create_host_path: true
 networks:
   default:
-    name: dockercompose9367398606499593589_default
+    name: dockercompose17504041737436154207_default
   ems-net:
-    name: dockercompose9367398606499593589_ems-net
-    driver: bridge
-  ems-network:
-    name: dockercompose9367398606499593589_ems-network
+    name: dockercompose17504041737436154207_ems-net
     driver: bridge
 volumes:
   rabbitmq_data:
-    name: dockercompose9367398606499593589_rabbitmq_data
+    name: dockercompose17504041737436154207_rabbitmq_data

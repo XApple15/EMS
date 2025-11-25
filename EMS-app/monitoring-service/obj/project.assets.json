@@ -540,11 +540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\monitoring-service\\monitoring-service.csproj",
+      "projectUniqueName": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\monitoring-service.csproj",
       "projectName": "monitoring-service",
-      "projectPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\monitoring-service\\monitoring-service.csproj",
+      "projectPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\monitoring-service.csproj",
       "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\monitoring-service\\obj\\",
+      "outputPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MQ/SPzd+WRs=",
+  "dgSpecHash": "Qy/KK+fssDc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\auth-service\\auth-service.csproj",
+  "projectFilePath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\auth-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\George\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\azure.core\\1.49.0\\azure.core.1.49.0.nupkg.sha512",

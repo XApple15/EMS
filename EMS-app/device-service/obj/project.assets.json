@@ -5786,11 +5786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\device-service\\device-service.csproj",
+      "projectUniqueName": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\device-service.csproj",
       "projectName": "device-service",
-      "projectPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\device-service\\device-service.csproj",
+      "projectPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\device-service.csproj",
       "packagesPath": "C:\\Users\\George\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\George\\source\\repos\\CoopyEms\\EMS-app\\device-service\\obj\\",
+      "outputPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\George\\AppData\\Roaming\\NuGet\\NuGet.Config",

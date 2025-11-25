@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using device_service.Data;
 
@@ -11,9 +12,11 @@ using device_service.Data;
 namespace device_service.Migrations
 {
     [DbContext(typeof(DeviceDButils))]
-    partial class DeviceDButilsModelSnapshot : ModelSnapshot
+    [Migration("20251125120132_added userdb")]
+    partial class addeduserdb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
