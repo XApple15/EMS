@@ -132,6 +132,7 @@ services:
       - ASPNETCORE_URLS=http://+:8080
     depends_on:
       - sqlserver
+      - rabbitmq
     networks:
       - ems-net
     restart: unless-stopped
