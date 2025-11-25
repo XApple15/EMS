@@ -10,8 +10,9 @@ This document describes the RabbitMQ-based event-driven architecture implemented
 
 1. **Shared.Events** - Class library containing event contracts
 2. **Auth-Service** - Event publisher for user registration events
-3. **User-Service** - Event consumer for creating user profiles
-4. **RabbitMQ** - Message broker with topic exchange
+3. **User-Service** - Event consumer for creating user profiles, and publisher for device-service user creation
+4. **Device-Service** - Event consumer for creating user records
+5. **RabbitMQ** - Message broker with topic exchange
 
 ### User Registration Flow
 
@@ -22,18 +23,24 @@ Auth-Service creates user credentials
   ↓
 Auth-Service publishes UserRegistered event to RabbitMQ
   ↓
-RabbitMQ routes event to user-service-queue
+RabbitMQ routes event to user-service-queue (routing key: user.registered)
   ↓
 User-Service consumes event and creates user profile
   ↓
-Both services complete independently
+User-Service publishes DeviceUserCreateRequested event to RabbitMQ
+  ↓
+RabbitMQ routes event to device-service-queue (routing key: user.device.create)
+  ↓
+Device-Service consumes event and creates user record
+  ↓
+All services complete independently
 ```
 
 ## Configuration
 
 ### RabbitMQ Settings
 
-Both services are configured in `appsettings.json`:
+All services are configured in `appsettings.json`:
 
 ```json
 {
@@ -51,6 +58,8 @@ Both services are configured in `appsettings.json`:
 }
 ```
 
+**Note**: Device-service uses `QueueName: "device-service-queue"` to avoid consuming its own published events.
+
 ### Development vs Docker
 
 - **Development**: Set `HostName` to `localhost`
@@ -60,21 +69,42 @@ Both services are configured in `appsettings.json`:
 
 ### UserRegisteredEvent
 
-Published when a new user registers in the system.
+Published by auth-service when a new user registers in the system.
 
-```csharp
+```json
 {
     "UserId": "guid",
-    "Email": "user@example.com",
     "Username": "username",
-    "FirstName": "John",
-    "LastName": "Doe",
+    "Address": "123 Main St",
     "RegisteredAt": "2024-11-22T00:00:00Z",
     "CorrelationId": "guid"
 }
 ```
 
 **Routing Key**: `user.registered`
+**Exchange**: `user.events`
+**Consumed By**: user-service
+
+### DeviceUserCreateRequested
+
+Published by user-service after successfully creating a user profile. Consumed by device-service to create a corresponding user record.
+
+```json
+{
+    "UserId": "550e8400-e29b-41d4-a716-446655440000",
+    "Email": "user@example.com",
+    "Username": "johndoe",
+    "Address": "123 Main Street",
+    "RegisteredAt": "2024-11-25T12:00:00Z",
+    "CorrelationId": "660e8400-e29b-41d4-a716-446655440001"
+}
+```
+
+**Routing Key**: `user.device.create`
+**Exchange**: `user.events`
+**Consumed By**: device-service
+
+**Idempotency**: Device-service uses a unique index on `AuthId` (mapped from `UserId`) to ensure duplicate events do not create duplicate records. The handler checks for existing users before inserting and gracefully handles unique constraint violations.
 
 ## Infrastructure Components
 
@@ -89,7 +119,17 @@ Published when a new user registers in the system.
 
 - **IEventConsumer** - Interface for consuming events
 - **RabbitMqEventConsumer** - RabbitMQ implementation with message acknowledgment
-- **UserRegisteredConsumerService** - Background service for consuming events
+- **IEventPublisher** - Interface for publishing events
+- **RabbitMqEventPublisher** - RabbitMQ implementation with retry logic
+- **UserRegisteredConsumerService** - Background service for consuming UserRegistered events and publishing DeviceUserCreateRequested events
+- **IRabbitMqConnectionFactory** - Factory for creating connections
+- **RabbitMqConnectionFactory** - Thread-safe connection management
+
+### Device-Service
+
+- **IEventConsumer** - Interface for consuming events
+- **RabbitMqEventConsumer** - RabbitMQ implementation with message acknowledgment
+- **DeviceUserCreatedConsumerService** - Background service for consuming DeviceUserCreateRequested events
 - **IRabbitMqConnectionFactory** - Factory for creating connections
 - **RabbitMqConnectionFactory** - Thread-safe connection management
 
@@ -112,7 +152,10 @@ Published when a new user registers in the system.
 
 ### Idempotency
 
-The user-service checks if a user profile already exists before creating a new one, ensuring duplicate events don't create duplicate profiles.
+All services implement idempotent message handling:
+
+- **User-Service**: Checks if a user profile already exists by AuthId before creating a new one, ensuring duplicate events don't create duplicate profiles.
+- **Device-Service**: Uses a unique index on `AuthId` (IX_Users_AuthId) in the database. The handler checks for existing users before inserting and gracefully handles unique constraint violations for concurrent message processing.
 
 ## Running the System
 
@@ -176,6 +219,12 @@ Expected Response:
 Check the user-service logs for:
 ```
 User profile created successfully: UserId={guid}, ProfileId={guid}, CorrelationId={guid}
+Published DeviceUserCreateRequested event: UserId={guid}, CorrelationId={guid}
+```
+
+Check the device-service logs for:
+```
+User created in device-service: UserId={guid}, ProfileId={guid}, CorrelationId={guid}
 ```
 
 Or check the RabbitMQ Management UI to see message flow.
@@ -199,7 +248,8 @@ Or check the RabbitMQ Management UI to see message flow.
 
 The system is designed to be idempotent - duplicate events should not create duplicate profiles. Check:
 - User-service logs for "User already exists" messages
-- Database for duplicate AuthId values
+- Device-service logs for "User already exists in device-service" messages
+- Database for duplicate AuthId values (unique index prevents duplicates in device-service)
 
 ## Future Enhancements
 
@@ -207,7 +257,6 @@ The system is designed to be idempotent - duplicate events should not create dup
 - **Circuit Breaker** - Prevent cascading failures
 - **Message Schema Versioning** - Support event evolution
 - **Additional Events** - UserUpdated, UserDeleted, etc.
-- **Device-Service Integration** - Subscribe to user events
 - **Distributed Tracing** - OpenTelemetry integration
 
 ## Dependencies

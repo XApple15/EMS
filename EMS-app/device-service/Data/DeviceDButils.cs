@@ -17,6 +17,11 @@ namespace device_service.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Add unique index on AuthId for idempotency
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.AuthId)
+                .IsUnique()
+                .HasDatabaseName("IX_Users_AuthId");
         }
     }
 }

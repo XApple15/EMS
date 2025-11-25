@@ -26,6 +26,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
 builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
 builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
+builder.Services.AddSingleton<IEventPublisher, RabbitMqEventPublisher>();
 
 // Add background service for consuming events
 builder.Services.AddHostedService<UserRegisteredConsumerService>();
