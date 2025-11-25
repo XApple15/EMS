@@ -17,6 +17,12 @@ namespace device_service.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Add unique index on AuthId to prevent duplicate users
+            // This ensures idempotency when processing device user creation events
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.AuthId)
+                .IsUnique()
+                .HasDatabaseName("IX_Users_AuthId_Unique");
         }
     }
 }
