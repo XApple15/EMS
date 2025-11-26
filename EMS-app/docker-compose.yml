@@ -141,6 +141,42 @@ services:
     build:
       context: .
       dockerfile: simulator-service/Dockerfile
+    container_name: simulator-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.simulator.rule=Host(`simulator.docker.localhost`)"
+      - "traefik.http.routers.simulator.entrypoints=web"
+      - "traefik.http.services.simulator.loadbalancer.server.port=8080"
+      - "traefik.http.routers.simulator.middlewares=cors-headers@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - rabbitmq
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+  monitoring-service:
+    image: ${DOCKER_REGISTRY-}monitoringservice
+    build:
+      context: .
+      dockerfile: monitoring-service/Dockerfile
+    container_name: monitoring-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.monitoring.rule=Host(`monitoring.docker.localhost`)"
+      - "traefik.http.routers.monitoring.entrypoints=web"
+      - "traefik.http.services.monitoring.loadbalancer.server.port=8080"
+      - "traefik.http.routers.monitoring.middlewares=cors-headers@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - rabbitmq
+    networks:
+      - ems-net
+    restart: unless-stopped
 
 networks:
   ems-net:

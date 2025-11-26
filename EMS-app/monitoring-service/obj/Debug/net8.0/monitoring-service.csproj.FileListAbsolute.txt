@@ -101,3 +101,5 @@ C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/monitorin
 C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/monitoring-service/obj/Debug/net8.0/monitoring-service.genruntimeconfig.cache
 C:/Users/George/source/repos/Energy-Management-System-NETReact/EMS-app/monitoring-service/obj/Debug/net8.0/ref/monitoring-service.dll
 /home/runner/work/EMS/EMS/EMS-app/monitoring-service/bin/Debug/net8.0/RabbitMQ.Client.dll
+/home/runner/work/EMS/EMS/EMS-app/monitoring-service/bin/Debug/net8.0/Shared.Events.dll
+/home/runner/work/EMS/EMS/EMS-app/monitoring-service/bin/Debug/net8.0/Shared.Events.pdb
