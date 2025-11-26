@@ -2,16 +2,24 @@
 
 ## Overview
 
-This document describes the RabbitMQ-based event-driven architecture implemented for the EMS microservices backend. The system uses a topic-based pub/sub messaging pattern for asynchronous communication between services.
+This document describes the RabbitMQ-based event-driven architecture implemented for the EMS microservices backend. The system uses both topic-based and fanout pub/sub messaging patterns for asynchronous communication between services.
 
 ## Architecture
 
 ### Components
 
 1. **Shared.Events** - Class library containing event contracts
-2. **Auth-Service** - Event publisher for user registration events
-3. **User-Service** - Event consumer for creating user profiles
-4. **RabbitMQ** - Message broker with topic exchange
+2. **Auth-Service** - Event publisher for user registration events and logs
+3. **User-Service** - Event consumer for creating user profiles and logs subscriber
+4. **Device-Service** - Event consumer for user events and logs subscriber
+5. **RabbitMQ** - Message broker with topic and fanout exchanges
+
+### Exchanges
+
+The system uses two types of exchanges:
+
+1. **user.events** (Topic Exchange) - For routing specific events using routing keys
+2. **logs** (Fanout Exchange) - For broadcasting log messages to all subscribers
 
 ### User Registration Flow
 
@@ -33,7 +41,7 @@ Both services complete independently
 
 ### RabbitMQ Settings
 
-Both services are configured in `appsettings.json`:
+All services are configured in `appsettings.json`:
 
 ```json
 {
@@ -45,6 +53,7 @@ Both services are configured in `appsettings.json`:
     "ExchangeName": "user.events",
     "ExchangeType": "topic",
     "QueueName": "user-service-queue",
+    "LogsExchangeName": "logs",
     "MaxRetryAttempts": 3,
     "RetryDelayMilliseconds": 1000
   }
@@ -76,12 +85,68 @@ Published when a new user registers in the system.
 
 **Routing Key**: `user.registered`
 
+## Logs Fanout Exchange
+
+The system includes a fanout exchange named `logs` for broadcasting log-like or broadcast-style messages to all subscribers. This follows the official RabbitMQ .NET tutorial pattern for publish/subscribe.
+
+### How It Works
+
+1. **Producer** publishes messages to the `logs` exchange with an empty routing key
+2. **Consumers** each declare a server-named exclusive queue and bind it to the `logs` exchange
+3. Messages are broadcast to all bound queues (all consumers receive all messages)
+4. Auto-acknowledgment (`autoAck: true`) is used for simple fire-and-forget semantics
+
+### Producer Pattern (EmitLog)
+
+```csharp
+// Declare fanout exchange
+await channel.ExchangeDeclareAsync(exchange: "logs", type: ExchangeType.Fanout);
+
+// Publish with empty routing key
+await channel.BasicPublishAsync(exchange: "logs", routingKey: string.Empty, body: body);
+```
+
+### Consumer Pattern (ReceiveLogs)
+
+```csharp
+// Declare fanout exchange
+await channel.ExchangeDeclareAsync(exchange: "logs", type: ExchangeType.Fanout);
+
+// Declare server-named exclusive queue
+QueueDeclareOk queueDeclareResult = await channel.QueueDeclareAsync();
+string queueName = queueDeclareResult.QueueName;
+
+// Bind to exchange with empty routing key
+await channel.QueueBindAsync(queue: queueName, exchange: "logs", routingKey: string.Empty);
+
+// Consume with auto-acknowledgment
+var consumer = new AsyncEventingBasicConsumer(channel);
+consumer.ReceivedAsync += async (model, ea) =>
+{
+    var message = Encoding.UTF8.GetString(ea.Body.ToArray());
+    Console.WriteLine($" [x] {message}");
+};
+await channel.BasicConsumeAsync(queue: queueName, autoAck: true, consumer: consumer);
+```
+
+### Usage
+
+Inject `ILogsPublisher` to publish log messages:
+
+```csharp
+await _logsPublisher.PublishLogAsync("info: User registration completed");
+```
+
+The `LogsConsumerService` background service automatically subscribes to and processes log messages.
+
 ## Infrastructure Components
 
 ### Auth-Service
 
 - **IEventPublisher** - Interface for publishing events
 - **RabbitMqEventPublisher** - RabbitMQ implementation with retry logic
+- **ILogsPublisher** - Interface for publishing to the logs fanout exchange
+- **RabbitMqLogsPublisher** - Fanout exchange publisher implementation
 - **IRabbitMqConnectionFactory** - Factory for creating connections
 - **RabbitMqConnectionFactory** - Thread-safe connection management
 
@@ -89,7 +154,27 @@ Published when a new user registers in the system.
 
 - **IEventConsumer** - Interface for consuming events
 - **RabbitMqEventConsumer** - RabbitMQ implementation with message acknowledgment
-- **UserRegisteredConsumerService** - Background service for consuming events
+- **IEventPublisher** - Interface for publishing events
+- **RabbitMqEventPublisher** - RabbitMQ implementation with retry logic
+- **ILogsPublisher** - Interface for publishing to the logs fanout exchange
+- **RabbitMqLogsPublisher** - Fanout exchange publisher implementation
+- **ILogsConsumer** - Interface for consuming from the logs fanout exchange
+- **RabbitMqLogsConsumer** - Fanout exchange consumer with server-named queues and autoAck
+- **UserRegisteredConsumerService** - Background service for consuming user registration events
+- **LogsConsumerService** - Background service for consuming broadcast log messages
+- **IRabbitMqConnectionFactory** - Factory for creating connections
+- **RabbitMqConnectionFactory** - Thread-safe connection management
+
+### Device-Service
+
+- **IEventConsumer** - Interface for consuming events
+- **RabbitMqEventConsumer** - RabbitMQ implementation with message acknowledgment
+- **ILogsPublisher** - Interface for publishing to the logs fanout exchange
+- **RabbitMqLogsPublisher** - Fanout exchange publisher implementation
+- **ILogsConsumer** - Interface for consuming from the logs fanout exchange
+- **RabbitMqLogsConsumer** - Fanout exchange consumer with server-named queues and autoAck
+- **DeviceUserCreatedConsumerService** - Background service for consuming device user creation events
+- **LogsConsumerService** - Background service for consuming broadcast log messages
 - **IRabbitMqConnectionFactory** - Factory for creating connections
 - **RabbitMqConnectionFactory** - Thread-safe connection management
 

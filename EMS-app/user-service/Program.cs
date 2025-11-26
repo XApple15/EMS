@@ -27,9 +27,12 @@ builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("R
 builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
 builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
 builder.Services.AddSingleton<IEventPublisher, RabbitMqEventPublisher>();
+builder.Services.AddSingleton<ILogsPublisher, RabbitMqLogsPublisher>();
+builder.Services.AddSingleton<ILogsConsumer, RabbitMqLogsConsumer>();
 
 // Add background service for consuming events
 builder.Services.AddHostedService<UserRegisteredConsumerService>();
+builder.Services.AddHostedService<LogsConsumerService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

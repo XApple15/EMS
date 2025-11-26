@@ -1,3 +1,0 @@
-C:\Users\George\source\repos\EMS-app-frontend\obj\Debug\ems-app-frontend.esproj.CoreCompileInputs.cache
-C:\Users\George\source\repos\Energy-Management-System-C#React\EMS-app-frontend\obj\Debug\ems-app-frontend.esproj.CoreCompileInputs.cache
-C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app-frontend\obj\Debug\ems-app-frontend.esproj.CoreCompileInputs.cache
