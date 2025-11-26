@@ -1157,3 +1157,6 @@ C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-se
 C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service\obj\Debug\net8.0\device-service.pdb
 C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service\obj\Debug\net8.0\device-service.genruntimeconfig.cache
 C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service\obj\Debug\net8.0\ref\device-service.dll
+C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service\bin\Debug\net8.0\Shared.Events.dll
+C:\Users\George\source\repos\Energy-Management-System-NETReact\EMS-app\device-service\bin\Debug\net8.0\Shared.Events.pdb

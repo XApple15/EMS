@@ -19,9 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "traefik", "traefik", "{683A
 		traefik\traefik.yml = traefik\traefik.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monitoring-service", "monitoring-service\monitoring-service.csproj", "{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "monitoring-service", "monitoring-service\monitoring-service.csproj", "{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Events", "Shared.Events\Shared.Events.csproj", "{C052216F-22B4-4B05-8A0A-F02A7F3504C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Events", "Shared.Events\Shared.Events.csproj", "{C052216F-22B4-4B05-8A0A-F02A7F3504C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simulator-service", "simulator-service\simulator-service.csproj", "{C4593744-B45A-40CA-86D7-23D3D3C02D6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,18 @@ Global
 		{C052216F-22B4-4B05-8A0A-F02A7F3504C7}.Release|x64.Build.0 = Release|Any CPU
 		{C052216F-22B4-4B05-8A0A-F02A7F3504C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{C052216F-22B4-4B05-8A0A-F02A7F3504C7}.Release|x86.Build.0 = Release|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Debug|x64.Build.0 = Debug|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Debug|x86.Build.0 = Debug|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Release|x64.ActiveCfg = Release|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Release|x64.Build.0 = Release|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4593744-B45A-40CA-86D7-23D3D3C02D6C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

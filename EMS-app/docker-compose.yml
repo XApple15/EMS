@@ -1,4 +1,4 @@
-﻿version: "3.8"
+version: "3.8"
 
 services:
     
@@ -135,6 +135,12 @@ services:
     networks:
       - ems-net
     restart: unless-stopped
+
+  simulator-service:
+    image: ${DOCKER_REGISTRY-}simulatorservice
+    build:
+      context: .
+      dockerfile: simulator-service/Dockerfile
 
 networks:
   ems-net:

@@ -1,5 +1,7 @@
+using device_service.BackgroundServices;
 using device_service.Data;
 using device_service.Implementation;
+using device_service.Infrastructure.Messaging;
 using device_service.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +19,13 @@ builder.Services.AddControllers();
 
 
 builder.Services.AddScoped<IDeviceService, DeviceService>();
+
+builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
+builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
+builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
+
+builder.Services.AddHostedService<DeviceUserCreatedConsumerService>();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -10,7 +10,8 @@
         "rabbitmq": "StartWithoutDebugging",
         "sqlserver": "StartWithoutDebugging",
         "traefik": "StartWithoutDebugging",
-        "user-service": "StartDebugging"
+        "user-service": "StartDebugging",
+        "simulator-service": "StartDebugging"
       }
     }
   }

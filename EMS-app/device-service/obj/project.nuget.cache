@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "E3MnRZFaoho=",
+  "dgSpecHash": "DIGXnLlwOrc=",
   "success": true,
   "projectFilePath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\device-service.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\George\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\George\\.nuget\\packages\\rabbitmq.client\\7.2.0\\rabbitmq.client.7.2.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\serilog.aspnetcore\\9.0.0\\serilog.aspnetcore.9.0.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\serilog.extensions.hosting\\9.0.0\\serilog.extensions.hosting.9.0.0.nupkg.sha512",
@@ -104,6 +105,7 @@
     "C:\\Users\\George\\.nuget\\packages\\system.text.encodings.web\\9.0.10\\system.text.encodings.web.9.0.10.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\system.text.json\\9.0.10\\system.text.json.9.0.10.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
+    "C:\\Users\\George\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\George\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
