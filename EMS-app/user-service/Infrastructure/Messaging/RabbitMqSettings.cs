@@ -49,5 +49,10 @@ namespace user_service.Infrastructure.Messaging
         /// Initial delay in milliseconds between retry attempts
         /// </summary>
         public int RetryDelayMilliseconds { get; set; } = 1000;
+
+        /// <summary>
+        /// Exchange name for fanout-based logs broadcasting
+        /// </summary>
+        public string LogsExchangeName { get; set; } = "logs";
     }
 }

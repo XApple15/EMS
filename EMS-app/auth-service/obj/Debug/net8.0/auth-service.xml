@@ -82,6 +82,20 @@
             <param name="routingKey">Routing key for topic-based routing</param>
             <returns>Task representing the async operation</returns>
         </member>
+        <member name="T:auth_service.Infrastructure.Messaging.ILogsPublisher">
+            <summary>
+            Interface for publishing log messages to the "logs" fanout exchange
+            following the official RabbitMQ .NET tutorial pattern.
+            </summary>
+        </member>
+        <member name="M:auth_service.Infrastructure.Messaging.ILogsPublisher.PublishLogAsync(System.String)">
+            <summary>
+            Publishes a log message to the "logs" fanout exchange.
+            The message is broadcast to all bound queues.
+            </summary>
+            <param name="message">The log message to publish</param>
+            <returns>Task representing the async operation</returns>
+        </member>
         <member name="T:auth_service.Infrastructure.Messaging.IRabbitMqConnectionFactory">
             <summary>
             Factory for creating and managing RabbitMQ connections
@@ -116,6 +130,19 @@
             <typeparam name="T">Type of event to publish</typeparam>
             <param name="event">Event object to publish</param>
             <param name="routingKey">Routing key for topic-based routing</param>
+        </member>
+        <member name="T:auth_service.Infrastructure.Messaging.RabbitMqLogsPublisher">
+            <summary>
+            RabbitMQ implementation of logs publisher using a fanout exchange.
+            Follows the official RabbitMQ .NET tutorial pattern for publish/subscribe.
+            </summary>
+        </member>
+        <member name="M:auth_service.Infrastructure.Messaging.RabbitMqLogsPublisher.PublishLogAsync(System.String)">
+            <summary>
+            Publishes a log message to the "logs" fanout exchange.
+            Uses empty routing key as per fanout exchange pattern.
+            </summary>
+            <param name="message">The log message to publish</param>
         </member>
         <member name="T:auth_service.Infrastructure.Messaging.RabbitMqSettings">
             <summary>
@@ -160,6 +187,11 @@
         <member name="P:auth_service.Infrastructure.Messaging.RabbitMqSettings.RetryDelayMilliseconds">
             <summary>
             Initial delay in milliseconds between retry attempts
+            </summary>
+        </member>
+        <member name="P:auth_service.Infrastructure.Messaging.RabbitMqSettings.LogsExchangeName">
+            <summary>
+            Exchange name for fanout-based logs broadcasting
             </summary>
         </member>
         <member name="T:auth_service.Migrations.initial">

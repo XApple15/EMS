@@ -23,8 +23,11 @@ builder.Services.AddScoped<IDeviceService, DeviceService>();
 builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
 builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
 builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
+builder.Services.AddSingleton<ILogsPublisher, RabbitMqLogsPublisher>();
+builder.Services.AddSingleton<ILogsConsumer, RabbitMqLogsConsumer>();
 
 builder.Services.AddHostedService<DeviceUserCreatedConsumerService>();
+builder.Services.AddHostedService<LogsConsumerService>();
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
