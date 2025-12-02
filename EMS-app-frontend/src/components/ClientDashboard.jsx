@@ -158,6 +158,14 @@ const ClientDashboard = () => {
                             <p className="stat-value">{getAverageConsumption()} <span className="unit">kWh</span></p>
                         </div>
                     </div>
+
+                    <div className="stat-card clickable" onClick={() => navigate('/client/energy-history')}>
+                        <div className="stat-icon history-icon"></div>
+                        <div className="stat-info">
+                            <p className="stat-label">View History</p>
+                            <p className="stat-value action-text">Energy Charts →</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="profile-section">

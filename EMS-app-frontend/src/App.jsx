@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import ClientDashboard from './components/ClientDashboard';
 import AdminDashboard from './components/AdminDashboard';
+import EnergyConsumptionHistory from './components/EnergyConsumptionHistory';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                       <Route path="/login" element={<Login />} />
                       <Route path="/register" element={<Register />} />
                       <Route path="/client/dashboard" element={<ClientDashboard />} />
+                      <Route path="/client/energy-history" element={<EnergyConsumptionHistory />} />
                       <Route path="/admin/dashboard" element={ <AdminDashboard/>}/>
                   </Routes>
               </div>

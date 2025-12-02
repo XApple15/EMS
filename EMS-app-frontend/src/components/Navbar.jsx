@@ -55,11 +55,22 @@ const Navbar = () => {
                             <li className="navbar-item">
                                 <Link
                                     to={isAdmin ? '/admin/dashboard' : '/client/dashboard'}
-                                    className={`navbar-link ${location.pathname.startsWith('/admin') || location.pathname.startsWith('/client') ? 'active' : ''}`}
+                                    className={`navbar-link ${location.pathname === '/admin/dashboard' || location.pathname === '/client/dashboard' ? 'active' : ''}`}
                                 >
                                     Dashboard
                                 </Link>
                             </li>
+
+                            {!isAdmin && (
+                                <li className="navbar-item">
+                                    <Link
+                                        to="/client/energy-history"
+                                        className={`navbar-link ${location.pathname === '/client/energy-history' ? 'active' : ''}`}
+                                    >
+                                        Energy History
+                                    </Link>
+                                </li>
+                            )}
 
                             <li className="navbar-item">
                                 <span className="navbar-link navbar-user">

@@ -23,6 +23,12 @@ export const deviceClient = axios.create({
     headers: defaultHeaders,
 });
 
+export const monitoringClient = axios.create({
+    baseURL: 'http://monitoring.docker.localhost',
+    timeout: defaultTimeout,
+    headers: defaultHeaders,
+});
+
 const attachAuthToken = (config) => {
     try {
         const token = localStorage.getItem('token');
@@ -50,7 +56,7 @@ const handleResponseError = (error) => {
     return Promise.reject(error);
 };
 
-[authClient, userClient, deviceClient].forEach((client) => {
+[authClient, userClient, deviceClient, monitoringClient].forEach((client) => {
     client.interceptors.request.use(
         (config) => attachAuthToken(config),
         (error) => Promise.reject(error)
