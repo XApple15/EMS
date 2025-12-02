@@ -1,4 +1,4 @@
-import authClient, { userClient, deviceClient } from './axios';
+import authClient, { userClient, deviceClient, monitoringClient } from './axios';
 
 
 export const userService = {
@@ -112,6 +112,21 @@ export const deviceService = {
             consumption: String(current.consumption ?? '')
         };
         const resp = await deviceClient.put(`/api/device/${deviceId}`, dto);
+        return resp.data;
+    }
+};
+
+export const energyConsumptionService = {
+    /**
+     * Get daily energy consumption data for a specific client and date
+     * @param {string} clientId - The client/user ID
+     * @param {string} date - The date in YYYY-MM-DD format
+     * @returns {Promise} - Promise with the energy consumption data
+     */
+    getDailyConsumption: async (clientId, date) => {
+        const resp = await monitoringClient.get(`/api/energyconsumption/client/${clientId}`, {
+            params: { date }
+        });
         return resp.data;
     }
 };

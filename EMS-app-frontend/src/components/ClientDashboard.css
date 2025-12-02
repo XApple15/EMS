@@ -86,7 +86,7 @@
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0,1fr));
     gap: 12px;
 }
 
@@ -99,6 +99,17 @@
     align-items: center;
     border: 1px solid #eef2f6;
     box-shadow: 0 4px 12px rgba(2,6,23,0.03);
+}
+
+.stat-card.clickable {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(2,6,23,0.08);
+    border-color: #0ea5a3;
 }
 
 .stat-icon {
@@ -123,6 +134,11 @@
     font-size: 1.25rem;
     font-weight: 700;
     margin-top: 4px;
+}
+
+.stat-info .action-text {
+    color: #0ea5a3;
+    font-size: 1rem;
 }
 
 .profile-section .profile-card {
