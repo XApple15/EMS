@@ -5756,7 +5756,7 @@
     ]
   },
   "packageFolders": {
-    "/home/runner/.nuget/packages/": {}
+    "/home/runner/work/EMS/.codeql-scratch/dbs/csharp/working/packages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5764,7 +5764,7 @@
       "projectUniqueName": "/home/runner/work/EMS/EMS/EMS-app/auth-service/auth-service.csproj",
       "projectName": "auth-service",
       "projectPath": "/home/runner/work/EMS/EMS/EMS-app/auth-service/auth-service.csproj",
-      "packagesPath": "/home/runner/.nuget/packages/",
+      "packagesPath": "/home/runner/work/EMS/.codeql-scratch/dbs/csharp/working/packages",
       "outputPath": "/home/runner/work/EMS/EMS/EMS-app/auth-service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
@@ -5880,6 +5880,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
