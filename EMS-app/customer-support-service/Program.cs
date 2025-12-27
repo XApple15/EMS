@@ -12,6 +12,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ISupportAgent, SupportAgent>();
 builder.Services.AddSingleton<IRabbitMQSupportService, RabbitMQSupportService>();
 
+// Configure RabbitMQ settings for admin chat
+builder.Services.Configure<RabbitMQSettings>(options =>
+{
+    options.AdminChatQueue = "admin_chat_messages";
+});
+
+// Register Admin Chat services
+builder.Services.AddSingleton<IAdminChatPublisher, AdminChatPublisher>();
+builder.Services.AddSingleton<IAdminChatService, AdminChatService>();
+
 var app = builder.Build();
 
 app.Services.GetRequiredService<IRabbitMQSupportService>();

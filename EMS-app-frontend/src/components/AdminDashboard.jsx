@@ -269,6 +269,19 @@ const AdminDashboard = () => {
                 <div className="admin-actions">
                     <button className="primary" onClick={handleAdd}>Create User</button>
                     <button className="primary" onClick={handleAddDevice}>Create Device</button>
+                    <button 
+                        className="primary" 
+                        onClick={() => navigate('/admin/chat')}
+                        style={{
+                            background: 'linear-gradient(to right, #3b82f6, #2563eb)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px'
+                        }}
+                    >
+                        <span>💬</span>
+                        <span>Admin Chat</span>
+                    </button>
                 </div>
             </div>
 

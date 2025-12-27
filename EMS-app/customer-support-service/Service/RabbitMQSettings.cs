@@ -8,5 +8,6 @@
         public string Password { get; set; } = "admin123";
         public string QuestionsQueue { get; set; } = "customer_questions";
         public string AnswersQueue { get; set; } = "customer_answers";
+        public string AdminChatQueue { get; set; } = "admin_chat_messages";
     }
 }

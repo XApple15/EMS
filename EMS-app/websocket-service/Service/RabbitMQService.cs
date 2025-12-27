@@ -44,10 +44,14 @@ namespace websocket_service.Service
                 DeclareQueue(_settings.QuestionsQueue);
                 DeclareQueue(_settings.AnswersQueue);
                 DeclareQueue(_settings.NotificationsQueue);
+                DeclareQueue(_settings.AdminChatQueue);
+                DeclareQueue(_settings.AdminNotificationsQueue);
 
                 StartListening();
                 StartListeningForNotifications();
-                _logger.LogInformation("WebSocket Service: Connected to RabbitMQ and listening for answers and notifications");
+                StartListeningForAdminChatMessages();
+                StartListeningForAdminNotifications();
+                _logger.LogInformation("WebSocket Service: Connected to RabbitMQ and listening for answers, notifications, and admin chat messages");
             }
             catch (Exception ex)
             {
@@ -181,6 +185,83 @@ namespace websocket_service.Service
                 consumer: consumer).GetAwaiter().GetResult();
 
             _logger.LogInformation("Started consuming notifications from queue: {Queue}", _settings.NotificationsQueue);
+        }
+
+        private void StartListeningForAdminChatMessages()
+        {
+            var consumer = new AsyncEventingBasicConsumer(_channel);
+
+            consumer.ReceivedAsync += async (model, ea) =>
+            {
+                try
+                {
+                    var body = ea.Body.ToArray();
+                    var message = Encoding.UTF8.GetString(body);
+                    var chatMessage = JsonSerializer.Deserialize<AdminChatMessage>(message);
+
+                    if (chatMessage != null)
+                    {
+                        _logger.LogInformation("Received admin chat message {MessageId} for room {ChatRoomId}",
+                            chatMessage.MessageId, chatMessage.ChatRoomId);
+
+                        // Send to all users in the chat room
+                        await _hubContext.Clients.Group(chatMessage.ChatRoomId)
+                            .SendAsync("ReceiveAdminChatMessage", chatMessage);
+
+                        _logger.LogInformation("Broadcasted admin chat message to room {ChatRoomId}", chatMessage.ChatRoomId);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error processing admin chat message from RabbitMQ");
+                }
+            };
+
+            _channel.BasicConsumeAsync(
+                queue: _settings.AdminChatQueue,
+                autoAck: true,
+                consumer: consumer).GetAwaiter().GetResult();
+
+            _logger.LogInformation("Started consuming admin chat messages from queue: {Queue}", _settings.AdminChatQueue);
+        }
+
+        private void StartListeningForAdminNotifications()
+        {
+            var consumer = new AsyncEventingBasicConsumer(_channel);
+
+            consumer.ReceivedAsync += async (model, ea) =>
+            {
+                try
+                {
+                    var body = ea.Body.ToArray();
+                    var message = Encoding.UTF8.GetString(body);
+                    
+                    // Try to deserialize as Notification first
+                    var notification = JsonSerializer.Deserialize<Notification>(message);
+
+                    if (notification != null && notification.UserId == "ALL_ADMINS")
+                    {
+                        _logger.LogInformation("Received admin notification: {Title}", notification.Title);
+
+                        // Broadcast to all connected admins
+                        // We'll send to all connections and let the client filter
+                        await _hubContext.Clients.All.SendAsync("ReceiveAdminNotification", notification);
+                        
+                        _logger.LogInformation("Broadcasted admin notification to all connected admins");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error processing admin notification from RabbitMQ");
+                }
+            };
+
+            _channel.BasicConsumeAsync(
+                queue: _settings.AdminNotificationsQueue,
+                autoAck: true,
+                consumer: consumer).GetAwaiter().GetResult();
+
+            _logger.LogInformation("Started consuming admin notifications from queue: {Queue}", _settings.AdminNotificationsQueue);
         }
 
         public void Dispose()
