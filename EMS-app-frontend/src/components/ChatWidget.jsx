@@ -72,7 +72,12 @@ const ChatWidget = () => {
                 const response = await axios.get(`http://customersupport.docker.localhost/api/AdminChat/active/${userId}`);
                 if (response.data.success && response.data.session) {
                     setAdminChatSession(response.data.session);
-                    setAdminChatStatus('active');
+                    // Set status based on whether admin is assigned
+                    if (response.data.session.adminId) {
+                        setAdminChatStatus('active');
+                    } else {
+                        setAdminChatStatus('pending');
+                    }
                     setChatMode('admin');
                     
                     // Load messages for this session
@@ -249,8 +254,10 @@ const ChatWidget = () => {
                 }];
             });
 
-            // Update status if admin joined
-            if (message.senderRole === 'system' && message.message.includes('admin has joined')) {
+            // Update status if admin joined - check for system message with specific content
+            if (message.senderRole === 'system' && 
+                (message.message.toLowerCase().includes('admin') && 
+                 message.message.toLowerCase().includes('joined'))) {
                 setAdminChatStatus('active');
             }
 

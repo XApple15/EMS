@@ -11,6 +11,7 @@ namespace websocket_service.Service
         private readonly ILogger<ChatHub> _logger;
 
         private static readonly Dictionary<string, string> _userConnections = new();
+        private static readonly Dictionary<string, string> _connectionToUser = new(); // Reverse lookup
         private static readonly Dictionary<string, HashSet<string>> _chatRoomConnections = new();
         private static readonly Dictionary<string, string> _userRoles = new();
 
@@ -34,16 +35,12 @@ namespace websocket_service.Service
             var connectionId = Context.ConnectionId;
             _logger.LogInformation("User disconnected: {UserId}", connectionId);
             
-            // Clean up user connections
-            var disconnectedUsers = _userConnections
-                .Where(kvp => kvp.Value == connectionId)
-                .Select(kvp => kvp.Key)
-                .ToList();
-            
-            foreach (var userId in disconnectedUsers)
+            // Clean up user connections using reverse lookup for O(1) performance
+            if (_connectionToUser.TryGetValue(connectionId, out var userId))
             {
                 _userConnections.Remove(userId);
                 _userRoles.Remove(userId);
+                _connectionToUser.Remove(connectionId);
             }
             
             // Clean up chat room connections
@@ -83,6 +80,7 @@ namespace websocket_service.Service
         public async Task RegisterUser(string userId, string role = "user")
         {
             _userConnections[userId] = Context.ConnectionId;
+            _connectionToUser[Context.ConnectionId] = userId; // Add reverse lookup
             _userRoles[userId] = role.ToLower();
             _logger.LogInformation("Registered user {UserId} with connection {ConnectionId} as {Role}",
                 userId, Context.ConnectionId, role);
