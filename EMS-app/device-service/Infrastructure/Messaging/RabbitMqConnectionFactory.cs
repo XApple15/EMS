@@ -4,9 +4,6 @@ using RabbitMQ.Client;
 
 namespace device_service.Infrastructure.Messaging
 {
-    /// <summary>
-    /// Factory for creating RabbitMQ connections with automatic recovery and connection pooling
-    /// </summary>
     public class RabbitMqConnectionFactory : IRabbitMqConnectionFactory
     {
         private readonly RabbitMqSettings _settings;
@@ -22,10 +19,6 @@ namespace device_service.Infrastructure.Messaging
             _logger = logger;
         }
 
-        /// <summary>
-        /// Creates or returns existing RabbitMQ connection
-        /// </summary>
-        /// <returns>A thread-safe IConnection instance</returns>
         public IConnection CreateConnection()
         {
             if (_connection != null && _connection.IsOpen)

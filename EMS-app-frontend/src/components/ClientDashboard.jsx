@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userService, deviceService } from '../api/api-service';
+import ChatWidget from './ChatWidget';
 import './ClientDashboard.css';
 
 const ClientDashboard = () => {
@@ -34,7 +35,6 @@ const ClientDashboard = () => {
             }
 
             setAuthUser(storedUser);
-
             if (storedUser && (storedUser.id || storedUser.Id)) {
                 const authId = storedUser.id ?? storedUser.Id;
                 await loadUserData(authId);
@@ -52,14 +52,12 @@ const ClientDashboard = () => {
         try {
             const userData = await userService.getUserByAuthId(authId);
             setUser(userData);
-
             if (userData && (userData.id || userData.Id)) {
                 const userId = userData.id ?? userData.Id;
                 await loadDevices(userId);
             } else {
                 setDevices([]);
             }
-
             setLoading(false);
         } catch (err) {
             console.error('Error fetching user data:', err);
@@ -158,6 +156,14 @@ const ClientDashboard = () => {
                             <p className="stat-value">{getAverageConsumption()} <span className="unit">kWh</span></p>
                         </div>
                     </div>
+
+                    <div className="stat-card clickable" onClick={() => navigate('/client/energy-history')}>
+                        <div className="stat-icon history-icon"></div>
+                        <div className="stat-info">
+                            <p className="stat-label">View History</p>
+                            <p className="stat-value action-text">Energy Charts →</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="profile-section">
@@ -204,7 +210,6 @@ const ClientDashboard = () => {
 
                 <div className="devices-section">
                     <h2>Your Devices ({devices.length})</h2>
-
                     {devices.length === 0 ? (
                         <div className="no-devices">
                             <p>You don't have any devices registered yet.</p>
@@ -228,7 +233,11 @@ const ClientDashboard = () => {
                         </div>
                     )}
                 </div>
+
             </div>
+
+            {/* Chat Widget */}
+            <ChatWidget />
         </div>
     );
 };

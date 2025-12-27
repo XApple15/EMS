@@ -20,6 +20,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+
+// Configure RabbitMQ
+builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
+builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
+builder.Services.AddScoped<IEventPublisher, RabbitMqEventPublisher>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
@@ -73,12 +80,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<AuthDButils>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("EMSAuthConnString")));
 
-builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
-// Configure RabbitMQ
-builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
-builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
-builder.Services.AddScoped<IEventPublisher, RabbitMqEventPublisher>();
 
 builder.Services.AddIdentityCore<ApplicationUser>()
     .AddRoles<IdentityRole>()

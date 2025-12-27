@@ -11,7 +11,10 @@
         "sqlserver": "StartWithoutDebugging",
         "traefik": "StartWithoutDebugging",
         "user-service": "StartDebugging",
-        "simulator-service": "StartDebugging"
+        "simulator-service": "StartDebugging",
+        "monitoring-service": "StartDebugging",
+        "customer-support-service": "StartDebugging",
+        "websocket-service": "StartDebugging"
       }
     }
   }

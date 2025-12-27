@@ -9,6 +9,8 @@ services:
     ports:
       - "5173:80"
     container_name: react-vite-app
+    networks:           # ADD THIS
+    - ems-net 
 
 
 
@@ -35,7 +37,7 @@ services:
 
 
   traefik:
-    image: traefik:v3.1
+    image: traefik:v3.6
     container_name: traefik
     command:
       - "--api.insecure=true"
@@ -52,24 +54,30 @@ services:
       - "80:80"
       - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - //var/run/docker.sock:/var/run/docker.sock:ro
       - "./traefik:/etc/traefik:ro"
     networks:
       - ems-net
     restart: unless-stopped
+
+
 
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=sqlserver
+      - MSSQL_SA_PASSWORD=Sqlserver15!
       - MSSQL_PID=Developer
     ports:
       - "1433:1433"
     networks:
       - ems-net
     restart: unless-stopped
+
+
+
+
 
   auth-service:
     image: ${DOCKER_REGISTRY-}authservice
@@ -93,6 +101,10 @@ services:
       - ems-net
     restart: unless-stopped
 
+
+
+
+
   user-service:
     image: ${DOCKER_REGISTRY-}userservice
     build:
@@ -115,11 +127,14 @@ services:
       - ems-net
     restart: unless-stopped
 
+
+
+
   device-service:
     image: ${DOCKER_REGISTRY-}deviceservice
     build:
       context: .
-      dockerfile: device-service/Dockerfile
+      dockerfile: device-service/Dockerfile 
     container_name: device-service
     labels:
       - "traefik.enable=true"
@@ -141,6 +156,89 @@ services:
     build:
       context: .
       dockerfile: simulator-service/Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.simulator.rule=Host(`simulator.docker.localhost`)"
+      - "traefik.http.routers.simulator.entrypoints=web"
+      - "traefik.http.services.simulator.loadbalancer.server.port=8080"
+      - "traefik.http.routers.simulator.middlewares=cors-headers@file,my-jwt-middleware@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+
+  monitoring-service:
+    image: ${DOCKER_REGISTRY-}monitoringservice
+    build:
+      context: .
+      dockerfile: monitoring-service/Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.monitoring.rule=Host(`monitoring.docker.localhost`)"
+      - "traefik.http.routers.monitoring.entrypoints=web"
+      - "traefik.http.services.monitoring.loadbalancer.server.port=8080"
+      - "traefik.http.routers.monitoring.middlewares=cors-headers@file,my-jwt-middleware@file"
+  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+
+  customer-support-service:
+    image: ${DOCKER_REGISTRY-}customersupportservice
+    build:
+      context: .
+      dockerfile: customer-support-service/Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.customersupport.rule=Host(`customersupport.docker.localhost`)"
+      - "traefik.http.routers.customersupport.entrypoints=web"
+      - "traefik.http.services.customersupport.loadbalancer.server.port=8080"
+      - "traefik.http.routers.customersupport.middlewares=cors-headers@file,my-jwt-middleware@file"
+  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+
+
+
+  websocket-service:
+    image: ${DOCKER_REGISTRY-}websocketservice
+    build:
+      context: .
+      dockerfile: websocket-service/Dockerfile
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.websocket.rule=Host(`websocket.docker.localhost`)"
+      - "traefik.http.routers.websocket.entrypoints=web"
+      - "traefik.http.services.websocket.loadbalancer.server.port=8080"
+      - "traefik.http.routers.websocket.middlewares=cors-headers@file,my-jwt-middleware@file"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - sqlserver
+      - rabbitmq
+    networks:
+      - ems-net
+    restart: unless-stopped
 
 networks:
   ems-net:
@@ -148,3 +246,6 @@ networks:
 
 volumes:
   rabbitmq_data:
+
+
+

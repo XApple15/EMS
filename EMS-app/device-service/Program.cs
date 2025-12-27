@@ -23,6 +23,7 @@ builder.Services.AddScoped<IDeviceService, DeviceService>();
 builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
 builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
 builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
+builder.Services.AddScoped<IEventPublisher, RabbitMqEventPublisher>();
 
 builder.Services.AddHostedService<DeviceUserCreatedConsumerService>();
 

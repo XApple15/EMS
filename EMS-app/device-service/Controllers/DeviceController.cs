@@ -1,21 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using device_service.Model;
 using device_service.Interface;
+using Microsoft.AspNetCore.Identity;
+using Shared.Events;
+using device_service.Infrastructure.Messaging;
 
 namespace device_service.Controllers
 {
-    /// <summary>
-    /// Device management and energy consumption tracking endpoints
-    /// </summary>
+
     [ApiController]
     [Route("api/[controller]")]
     public class DeviceController : ControllerBase
     {
         private readonly IDeviceService _deviceService;
+        private readonly ILogger<DeviceController> _logger;
+        private readonly IEventPublisher _eventPublisher;
 
-        public DeviceController(IDeviceService deviceService)
+
+        public DeviceController(IDeviceService deviceService, ILogger<DeviceController> logger, IEventPublisher eventPublisher)
         {
             _deviceService = deviceService;
+            _logger = logger;
+            _eventPublisher = eventPublisher;
         }
 
         /// <summary>
@@ -149,6 +155,30 @@ namespace device_service.Controllers
             }
 
             var device = await _deviceService.CreateDeviceAsync(deviceDto);
+
+            var correlationId = Guid.NewGuid().ToString();
+
+            try
+            {
+                var createdDeviceEvent = new CreatedDeviceEvent
+                {
+                    id = device.id.ToString(),
+                    CorrelationId = correlationId
+                };
+                _logger.LogInformation("Created device id= {deviceid}", device.id);
+                await _eventPublisher.PublishAsync(createdDeviceEvent, "monitoring.device.created");
+
+                _logger.LogInformation(
+                    "User registered and event published: UserId={UserId}, CorrelationId={CorrelationId}",
+                    createdDeviceEvent.id, correlationId);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "Failed to publish UserRegistered event for user {UserId}, CorrelationId={CorrelationId}",
+                    device.id, correlationId);
+            }
+
             return CreatedAtAction(nameof(GetDeviceById), new { id = device.id }, device);
         }
 

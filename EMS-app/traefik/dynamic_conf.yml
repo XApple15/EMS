@@ -9,14 +9,23 @@ http:
           - "PUT"
           - "DELETE"
           - "OPTIONS"
+          - "PATCH"
         accessControlAllowOriginList:
           - "http://localhost:5173"
           - "http://localhost:3000"
+          - "http://frontend"
+        accessControlAllowCredentials: true  # ADD THIS LINE
+
         accessControlAllowHeaders:
           - "Content-Type"
           - "Authorization"
-        accessControlMaxAge: 100
+          - "X-Requested-With"
+          - "X-SignalR-User-Agent"
+        accessControlMaxAge: 3600
         addVaryHeader: true
+        accessControlExposeHeaders:          # ADD THIS SECTION
+          - "Authorization"
+          - "Content-Length"
 
   
 

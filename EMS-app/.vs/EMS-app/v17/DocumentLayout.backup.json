@@ -3,108 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64BABFF7-47E7-45C8-8242-AEEA69A16030}|websocket-service\\websocket-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\websocket-service\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BABFF7-47E7-45C8-8242-AEEA69A16030}|websocket-service\\websocket-service.csproj|solutionrelative:websocket-service\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{64BABFF7-47E7-45C8-8242-AEEA69A16030}|websocket-service\\websocket-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\websocket-service\\service\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BABFF7-47E7-45C8-8242-AEEA69A16030}|websocket-service\\websocket-service.csproj|solutionrelative:websocket-service\\service\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\monitoring-service\\model\\deviceconsumptionevery10min.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|solutionrelative:monitoring-service\\model\\deviceconsumptionevery10min.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\monitoring-service\\model\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|solutionrelative:monitoring-service\\model\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\monitoring-service\\monitoring-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A2A0FF8B-E679-4AC9-B9E8-CADB54D675EB}|monitoring-service\\monitoring-service.csproj|solutionrelative:monitoring-service\\monitoring-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\auth-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\auth-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\auth-service\\infrastructure\\messaging\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\auth-service\\infrastructure\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|solutionrelative:auth-service\\infrastructure\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\backgroundservices\\userregisteredconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\backgroundservices\\userregisteredconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqeventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqeventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\irabbitmqconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\ieventconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\shared.events\\deviceusercreaterequestedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|solutionrelative:shared.events\\deviceusercreaterequestedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\shared.events\\userregisteredevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C052216F-22B4-4B05-8A0A-F02A7F3504C7}|Shared.Events\\Shared.Events.csproj|solutionrelative:shared.events\\userregisteredevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\infrastructure\\messaging\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\infrastructure\\messaging\\ieventpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\backgroundservices\\deviceusercreatedconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\backgroundservices\\deviceusercreatedconsumerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\device-service\\device-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{DFF37006-A949-47AC-9CDC-213E0489B381}|device-service\\device-service.csproj|solutionrelative:device-service\\device-service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8893AE30-1222-47EC-8932-D82ACF6AA319}|user-service\\user-service.csproj|solutionrelative:user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1639C2CC-F9FA-4E0E-8E42-488A5C04AAAE}|auth-service\\auth-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\auth-service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,47 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 192,
-          "SelectedChildIndex": 24,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeviceConsumptionEvery10min.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\Model\\DeviceConsumptionEvery10min.cs",
-              "RelativeDocumentMoniker": "monitoring-service\\Model\\DeviceConsumptionEvery10min.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\Model\\DeviceConsumptionEvery10min.cs",
-              "RelativeToolTip": "monitoring-service\\Model\\DeviceConsumptionEvery10min.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:56:12.346Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Device.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\Model\\Device.cs",
-              "RelativeDocumentMoniker": "monitoring-service\\Model\\Device.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\Model\\Device.cs",
-              "RelativeToolTip": "monitoring-service\\Model\\Device.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:54:10.918Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "monitoring-service",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\monitoring-service.csproj",
-              "RelativeDocumentMoniker": "monitoring-service\\monitoring-service.csproj",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\monitoring-service\\monitoring-service.csproj",
-              "RelativeToolTip": "monitoring-service\\monitoring-service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-26T17:53:09.295Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
@@ -180,303 +49,60 @@
               "Name": "ST:15:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IEventPublisher.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:35:19.251Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:28:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "RabbitMQService.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\websocket-service\\Service\\RabbitMQService.cs",
+              "RelativeDocumentMoniker": "websocket-service\\Service\\RabbitMQService.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\websocket-service\\Service\\RabbitMQService.cs",
+              "RelativeToolTip": "websocket-service\\Service\\RabbitMQService.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAswJwAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:34:54.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IRabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:34:50.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "RabbitMqEventPublisher.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "RelativeDocumentMoniker": "auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "RelativeToolTip": "auth-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T17:34:44.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Program.cs",
-              "RelativeDocumentMoniker": "device-service\\Program.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Program.cs",
-              "RelativeToolTip": "device-service\\Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:16:17.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IEventConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:06:20.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "RabbitMqSettings.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:06:16.287Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "RabbitMqEventConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:06:15.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IRabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:06:14.523Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:06:13.604Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserRegisteredEvent.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\Shared.Events\\UserRegisteredEvent.cs",
-              "RelativeDocumentMoniker": "Shared.Events\\UserRegisteredEvent.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\Shared.Events\\UserRegisteredEvent.cs",
-              "RelativeToolTip": "Shared.Events\\UserRegisteredEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T13:06:02.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "DeviceUserCreateRequestedEvent.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\Shared.Events\\DeviceUserCreateRequestedEvent.cs",
-              "RelativeDocumentMoniker": "Shared.Events\\DeviceUserCreateRequestedEvent.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\Shared.Events\\DeviceUserCreateRequestedEvent.cs",
-              "RelativeToolTip": "Shared.Events\\DeviceUserCreateRequestedEvent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:53:27.134Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Program.cs",
-              "RelativeDocumentMoniker": "user-service\\Program.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Program.cs",
-              "RelativeToolTip": "user-service\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBwAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:52:04.081Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "IEventPublisher.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\IEventPublisher.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:51:27.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RabbitMqSettings.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeDocumentMoniker": "device-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "RelativeToolTip": "device-service\\Infrastructure\\Messaging\\RabbitMqSettings.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAIwDQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:44:14.587Z",
+              "WhenOpened": "2025-12-27T17:27:16.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RabbitMqEventConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "RelativeDocumentMoniker": "device-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "RelativeToolTip": "device-service\\Infrastructure\\Messaging\\RabbitMqEventConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAABAAAAAAAAAA==",
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\websocket-service\\Service\\ChatHub.cs",
+              "RelativeDocumentMoniker": "websocket-service\\Service\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\websocket-service\\Service\\ChatHub.cs",
+              "RelativeToolTip": "websocket-service\\Service\\ChatHub.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwEUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:44:02.067Z",
+              "WhenOpened": "2025-12-27T17:27:05.477Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "device-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "device-service\\Infrastructure\\Messaging\\RabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwEYAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "user-service\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Controllers\\UserController.cs",
+              "RelativeToolTip": "user-service\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAQwG8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:43:42.8Z",
+              "WhenOpened": "2025-12-27T17:18:48.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IRabbitMqConnectionFactory.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeDocumentMoniker": "device-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "RelativeToolTip": "device-service\\Infrastructure\\Messaging\\IRabbitMqConnectionFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:43:23.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IEventConsumer.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "RelativeDocumentMoniker": "device-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "RelativeToolTip": "device-service\\Infrastructure\\Messaging\\IEventConsumer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:43:01.912Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "DeviceUserCreatedConsumerService.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\BackgroundServices\\DeviceUserCreatedConsumerService.cs",
-              "RelativeDocumentMoniker": "device-service\\BackgroundServices\\DeviceUserCreatedConsumerService.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\BackgroundServices\\DeviceUserCreatedConsumerService.cs",
-              "RelativeToolTip": "device-service\\BackgroundServices\\DeviceUserCreatedConsumerService.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwJcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:41:26.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "device-service.csproj",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\device-service.csproj",
-              "RelativeDocumentMoniker": "device-service\\device-service.csproj",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\device-service\\device-service.csproj",
-              "RelativeToolTip": "device-service\\device-service.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-25T12:40:12.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "RabbitMqEventPublisher.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "RelativeDocumentMoniker": "user-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "RelativeToolTip": "user-service\\Infrastructure\\Messaging\\RabbitMqEventPublisher.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAAwGYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:51:20.098Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "UserRegisteredConsumerService.cs",
-              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "RelativeDocumentMoniker": "user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "RelativeToolTip": "user-service\\BackgroundServices\\UserRegisteredConsumerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:36:38.492Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "auth-service\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
               "RelativeToolTip": "auth-service\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAF4AAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAA3wLEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T12:34:21.774Z"
+              "WhenOpened": "2025-12-27T17:17:04.727Z",
+              "EditorCaption": ""
             }
           ]
         },

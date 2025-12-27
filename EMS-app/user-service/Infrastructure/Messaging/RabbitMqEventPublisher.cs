@@ -5,9 +5,6 @@ using System.Text.Json;
 
 namespace user_service.Infrastructure.Messaging
 {
-    /// <summary>
-    /// RabbitMQ implementation of event publisher with retry logic and error handling
-    /// </summary>
     public class RabbitMqEventPublisher : IEventPublisher
     {
         private readonly IRabbitMqConnectionFactory _connectionFactory;
@@ -24,12 +21,6 @@ namespace user_service.Infrastructure.Messaging
             _logger = logger;
         }
 
-        /// <summary>
-        /// Publishes an event to RabbitMQ with retry logic
-        /// </summary>
-        /// <typeparam name="T">Type of event to publish</typeparam>
-        /// <param name="event">Event object to publish</param>
-        /// <param name="routingKey">Routing key for topic-based routing</param>
         public async Task PublishAsync<T>(T @event, string routingKey) where T : class
         {
             int retryCount = 0;
@@ -42,18 +33,15 @@ namespace user_service.Infrastructure.Messaging
                     var connection = _connectionFactory.CreateConnection();
                     using var channel = await connection.CreateChannelAsync();
 
-                    // Declare exchange
                     await channel.ExchangeDeclareAsync(
                         exchange: _settings.ExchangeName,
                         type: _settings.ExchangeType,
                         durable: true,
                         autoDelete: false);
 
-                    // Serialize event to JSON
                     var message = JsonSerializer.Serialize(@event);
                     var body = Encoding.UTF8.GetBytes(message);
 
-                    // Create persistent message properties
                     var properties = new BasicProperties
                     {
                         Persistent = true,
@@ -61,7 +49,6 @@ namespace user_service.Infrastructure.Messaging
                         Timestamp = new AmqpTimestamp(DateTimeOffset.UtcNow.ToUnixTimeSeconds())
                     };
 
-                    // Publish message
                     await channel.BasicPublishAsync(
                         exchange: _settings.ExchangeName,
                         routingKey: routingKey,
@@ -73,7 +60,7 @@ namespace user_service.Infrastructure.Messaging
                         "Published event {EventType} with routing key {RoutingKey} to exchange {Exchange}",
                         typeof(T).Name, routingKey, _settings.ExchangeName);
 
-                    return; // Success
+                    return;
                 }
                 catch (Exception ex)
                 {
@@ -86,7 +73,7 @@ namespace user_service.Infrastructure.Messaging
 
                     if (retryCount < _settings.MaxRetryAttempts)
                     {
-                        var delay = _settings.RetryDelayMilliseconds * retryCount; // Exponential backoff
+                        var delay = _settings.RetryDelayMilliseconds * retryCount;
                         await Task.Delay(delay);
                     }
                 }

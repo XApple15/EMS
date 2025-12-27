@@ -12,7 +12,6 @@ using user_service.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
 
@@ -22,13 +21,11 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IUserService, UserService>();
 
-// Configure RabbitMQ
 builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMq"));
 builder.Services.AddSingleton<IRabbitMqConnectionFactory, RabbitMqConnectionFactory>();
 builder.Services.AddSingleton<IEventConsumer, RabbitMqEventConsumer>();
 builder.Services.AddSingleton<IEventPublisher, RabbitMqEventPublisher>();
 
-// Add background service for consuming events
 builder.Services.AddHostedService<UserRegisteredConsumerService>();
 
 builder.Services.AddEndpointsApiExplorer();

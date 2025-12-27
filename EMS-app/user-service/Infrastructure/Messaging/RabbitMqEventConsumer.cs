@@ -6,9 +6,7 @@ using System.Text.Json;
 
 namespace user_service.Infrastructure.Messaging
 {
-    /// <summary>
-    /// RabbitMQ implementation of event consumer with message acknowledgment and error handling
-    /// </summary>
+
     public class RabbitMqEventConsumer : IEventConsumer
     {
         private readonly IRabbitMqConnectionFactory _connectionFactory;
@@ -25,13 +23,6 @@ namespace user_service.Infrastructure.Messaging
             _logger = logger;
         }
 
-        /// <summary>
-        /// Starts consuming messages from RabbitMQ with manual acknowledgment
-        /// </summary>
-        /// <typeparam name="T">Type of event to consume</typeparam>
-        /// <param name="routingKey">Routing key pattern to bind to</param>
-        /// <param name="handler">Handler function that returns true on success, false to requeue</param>
-        /// <param name="cancellationToken">Cancellation token for stopping consumption</param>
         public async Task StartConsumingAsync<T>(
             string routingKey,
             Func<T, Task<bool>> handler,
@@ -44,21 +35,18 @@ namespace user_service.Infrastructure.Messaging
                     var connection = _connectionFactory.CreateConnection();
                     var channel = await connection.CreateChannelAsync();
 
-                    // Declare exchange
                     await channel.ExchangeDeclareAsync(
                         exchange: _settings.ExchangeName,
                         type: _settings.ExchangeType,
                         durable: true,
                         autoDelete: false);
 
-                    // Declare queue
                     await channel.QueueDeclareAsync(
                         queue: _settings.QueueName,
                         durable: true,
                         exclusive: false,
                         autoDelete: false);
 
-                    // Bind queue to exchange with routing key
                     await channel.QueueBindAsync(
                         queue: _settings.QueueName,
                         exchange: _settings.ExchangeName,
@@ -68,10 +56,8 @@ namespace user_service.Infrastructure.Messaging
                         "Consumer started: Queue={Queue}, Exchange={Exchange}, RoutingKey={RoutingKey}",
                         _settings.QueueName, _settings.ExchangeName, routingKey);
 
-                    // Set prefetch count to 1 for fair dispatch
                     await channel.BasicQosAsync(prefetchSize: 0, prefetchCount: 1, global: false);
 
-                    // Create consumer
                     var consumer = new AsyncEventingBasicConsumer(channel);
                     consumer.ReceivedAsync += async (model, ea) =>
                     {
@@ -84,7 +70,6 @@ namespace user_service.Infrastructure.Messaging
                                 "Received message: RoutingKey={RoutingKey}, DeliveryTag={DeliveryTag}",
                                 ea.RoutingKey, ea.DeliveryTag);
 
-                            // Deserialize message
                             var @event = JsonSerializer.Deserialize<T>(message);
                             if (@event == null)
                             {
@@ -93,19 +78,16 @@ namespace user_service.Infrastructure.Messaging
                                 return;
                             }
 
-                            // Process message
                             var success = await handler(@event);
 
                             if (success)
                             {
-                                // Acknowledge message
                                 await channel.BasicAckAsync(ea.DeliveryTag, multiple: false);
                                 _logger.LogInformation("Message processed successfully: DeliveryTag={DeliveryTag}", 
                                     ea.DeliveryTag);
                             }
                             else
                             {
-                                // Requeue message for retry
                                 await channel.BasicNackAsync(ea.DeliveryTag, multiple: false, requeue: true);
                                 _logger.LogWarning("Message processing failed, requeued: DeliveryTag={DeliveryTag}", 
                                     ea.DeliveryTag);
@@ -114,18 +96,15 @@ namespace user_service.Infrastructure.Messaging
                         catch (Exception ex)
                         {
                             _logger.LogError(ex, "Error processing message: {Message}", message);
-                            // Requeue message on error
                             await channel.BasicNackAsync(ea.DeliveryTag, multiple: false, requeue: true);
                         }
                     };
 
-                    // Start consuming
                     await channel.BasicConsumeAsync(
                         queue: _settings.QueueName,
                         autoAck: false,
                         consumer: consumer);
 
-                    // Keep the consumer running until cancellation
                     while (!cancellationToken.IsCancellationRequested)
                     {
                         await Task.Delay(1000, cancellationToken);

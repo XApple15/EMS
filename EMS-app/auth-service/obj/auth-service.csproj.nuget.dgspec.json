@@ -92,6 +92,10 @@
               "target": "Package",
               "version": "[1.21.0, )"
             },
+            "Microsoft.Win32.Registry": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[7.2.0, )"
