@@ -1,9 +1,11 @@
 ﻿import React, { useState, useEffect, useRef } from 'react';
 import * as signalR from '@microsoft/signalr';
+import axios from 'axios';
 
 const ChatWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [showNotifications, setShowNotifications] = useState(false);
+    const [chatMode, setChatMode] = useState('bot'); // 'bot' or 'admin'
     const [messages, setMessages] = useState([
         { id: 1, text: 'Hello! How can I help you today?', type: 'agent', timestamp: new Date() }
     ]);
@@ -14,6 +16,8 @@ const ChatWidget = () => {
     const [unreadCount, setUnreadCount] = useState(0);
     const [unreadNotifications, setUnreadNotifications] = useState(0);
     const [userId, setUserId] = useState(null);
+    const [adminChatSession, setAdminChatSession] = useState(null);
+    const [adminChatStatus, setAdminChatStatus] = useState('none'); // 'none', 'pending', 'active'
 
     const messagesEndRef = useRef(null);
     const notificationsEndRef = useRef(null);
@@ -59,6 +63,102 @@ const ChatWidget = () => {
         loadUserId();
     }, []);
 
+    // Check for active admin chat session
+    useEffect(() => {
+        if (!userId) return;
+
+        const checkActiveChat = async () => {
+            try {
+                const response = await axios.get(`http://customersupport.docker.localhost/api/AdminChat/active/${userId}`);
+                if (response.data.success && response.data.session) {
+                    setAdminChatSession(response.data.session);
+                    setAdminChatStatus('active');
+                    setChatMode('admin');
+                    
+                    // Load messages for this session
+                    await loadAdminChatMessages(response.data.session.chatRoomId);
+                }
+            } catch (error) {
+                console.error('Error checking active chat:', error);
+            }
+        };
+
+        checkActiveChat();
+    }, [userId]);
+
+    const loadAdminChatMessages = async (chatRoomId) => {
+        try {
+            const response = await axios.get(`http://customersupport.docker.localhost/api/AdminChat/messages/${chatRoomId}`);
+            if (response.data.success) {
+                const adminMessages = response.data.messages.map(msg => ({
+                    id: msg.messageId,
+                    text: msg.message,
+                    type: msg.senderRole === 'user' ? 'user' : msg.senderRole === 'system' ? 'system' : 'agent',
+                    timestamp: new Date(msg.timestamp),
+                    senderRole: msg.senderRole
+                }));
+                setMessages(adminMessages);
+            }
+        } catch (error) {
+            console.error('Error loading admin chat messages:', error);
+        }
+    };
+
+    const initiateAdminChat = async () => {
+        if (!userId) {
+            console.error('No user ID available');
+            return;
+        }
+
+        try {
+            const response = await axios.post('http://customersupport.docker.localhost/api/AdminChat/initiate', {
+                userId: userId,
+                initialMessage: 'I need help from an admin'
+            });
+
+            if (response.data.success) {
+                setAdminChatSession(response.data.session);
+                setAdminChatStatus('pending');
+                setChatMode('admin');
+                setMessages([
+                    { 
+                        id: Date.now(), 
+                        text: 'Connecting you with an admin. Please wait...', 
+                        type: 'system', 
+                        timestamp: new Date() 
+                    }
+                ]);
+
+                // Join the chat room
+                if (connectionRef.current && connectionRef.current.state === signalR.HubConnectionState.Connected) {
+                    await connectionRef.current.invoke('JoinChatRoom', response.data.session.chatRoomId);
+                }
+            }
+        } catch (error) {
+            console.error('Error initiating admin chat:', error);
+            setMessages(prev => [...prev, {
+                id: Date.now(),
+                text: 'Sorry, we could not connect you to an admin. Please try again later.',
+                type: 'system',
+                timestamp: new Date()
+            }]);
+        }
+    };
+
+    const switchToAdminChat = () => {
+        setChatMode('admin');
+        initiateAdminChat();
+    };
+
+    const switchToBotChat = () => {
+        setChatMode('bot');
+        setAdminChatStatus('none');
+        setAdminChatSession(null);
+        setMessages([
+            { id: 1, text: 'Hello! How can I help you today?', type: 'agent', timestamp: new Date() }
+        ]);
+    };
+
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
@@ -102,9 +202,28 @@ const ChatWidget = () => {
             setConnectionStatus('connected');
 
             // Register userId with the hub
-            connection.invoke('RegisterUser', userId)
-                .then(() => console.log('User ID registered successfully'))
+            connection.invoke('RegisterUser', userId, 'user')
+                .then(() => {
+                    console.log('User ID registered successfully');
+                    
+                    // Join admin chat room if we have an active session
+                    if (adminChatSession && adminChatSession.chatRoomId) {
+                        connection.invoke('JoinChatRoom', adminChatSession.chatRoomId)
+                            .then(() => console.log('Joined admin chat room:', adminChatSession.chatRoomId))
+                            .catch(err => console.error('Error joining admin chat room:', err));
+                    }
+                })
                 .catch(err => console.error('Error registering user ID:', err));
+        });
+
+        // Registered confirmation
+        connection.on('Registered', (data) => {
+            console.log('Registration confirmed:', data);
+        });
+
+        // Joined chat room confirmation
+        connection.on('JoinedChatRoom', (chatRoomId) => {
+            console.log('Joined chat room:', chatRoomId);
         });
 
         // Message sent confirmation
@@ -112,7 +231,36 @@ const ChatWidget = () => {
             console.log('Message sent:', message);
         });
 
-        // Receive answer from support
+        // Receive admin chat message
+        connection.on('ReceiveAdminChatMessage', (message) => {
+            console.log('Received admin chat message:', message);
+
+            setMessages(prev => {
+                // Avoid duplicates
+                if (prev.some(m => m.id === message.messageId)) {
+                    return prev;
+                }
+                return [...prev, {
+                    id: message.messageId,
+                    text: message.message,
+                    type: message.senderRole === 'user' ? 'user' : message.senderRole === 'system' ? 'system' : 'agent',
+                    timestamp: new Date(message.timestamp),
+                    senderRole: message.senderRole
+                }];
+            });
+
+            // Update status if admin joined
+            if (message.senderRole === 'system' && message.message.includes('admin has joined')) {
+                setAdminChatStatus('active');
+            }
+
+            // Increment unread count if chat is closed
+            if (!isOpen && message.senderRole !== 'user') {
+                setUnreadCount(prev => prev + 1);
+            }
+        });
+
+        // Receive answer from support (bot)
         connection.on('ReceiveAnswer', (message, timestamp) => {
             console.log('Received answer:', message);
             setIsTyping(false);
@@ -229,17 +377,33 @@ const ChatWidget = () => {
         }
 
         try {
-            await connectionRef.current.invoke('SendQuestion', text);
+            if (chatMode === 'admin' && adminChatSession) {
+                // Send admin chat message via API
+                const response = await axios.post('http://customersupport.docker.localhost/api/AdminChat/send', {
+                    chatRoomId: adminChatSession.chatRoomId,
+                    senderId: userId,
+                    senderRole: 'user',
+                    message: text
+                });
 
-            setMessages(prev => [...prev, {
-                id: Date.now(),
-                text: text,
-                type: 'user',
-                timestamp: new Date()
-            }]);
+                if (response.data.success) {
+                    // Message will be received via SignalR, don't add it here
+                    setInputMessage('');
+                }
+            } else {
+                // Send question to bot
+                await connectionRef.current.invoke('SendQuestion', text);
 
-            setInputMessage('');
-            setIsTyping(true);
+                setMessages(prev => [...prev, {
+                    id: Date.now(),
+                    text: text,
+                    type: 'user',
+                    timestamp: new Date()
+                }]);
+
+                setInputMessage('');
+                setIsTyping(true);
+            }
         } catch (err) {
             console.error('Error sending message:', err);
         }
@@ -739,14 +903,19 @@ const ChatWidget = () => {
                         <div style={styles.headerLeft}>
                             <div style={styles.avatarContainer}>
                                 <div style={styles.avatar}>
-                                    <span>🤖</span>
+                                    <span>{chatMode === 'admin' ? '👨‍💼' : '🤖'}</span>
                                 </div>
                                 <div style={styles.statusIndicator}></div>
                             </div>
                             <div>
-                                <h3 style={styles.headerTitle}>Support Chat</h3>
+                                <h3 style={styles.headerTitle}>
+                                    {chatMode === 'admin' ? 'Admin Support' : 'Support Chat'}
+                                </h3>
                                 <p style={styles.headerSubtitle}>
-                                    {connectionStatus === 'connected' ? 'Online' : 'Connecting...'}
+                                    {chatMode === 'admin' 
+                                        ? (adminChatStatus === 'pending' ? 'Waiting for admin...' : 'Connected with admin')
+                                        : (connectionStatus === 'connected' ? 'Online' : 'Connecting...')
+                                    }
                                 </p>
                             </div>
                         </div>
@@ -762,22 +931,115 @@ const ChatWidget = () => {
                         </button>
                     </div>
 
+                    {/* Chat mode switcher */}
+                    {chatMode === 'bot' && (
+                        <div style={{
+                            padding: '12px 16px',
+                            borderBottom: '1px solid #e5e7eb',
+                            background: '#f9fafb',
+                            display: 'flex',
+                            justifyContent: 'center'
+                        }}>
+                            <button
+                                onClick={switchToAdminChat}
+                                style={{
+                                    padding: '8px 16px',
+                                    background: 'linear-gradient(to right, #3b82f6, #2563eb)',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: '20px',
+                                    cursor: 'pointer',
+                                    fontWeight: '600',
+                                    fontSize: '13px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    transition: 'transform 0.2s'
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                            >
+                                <span>👨‍💼</span>
+                                <span>Chat with Admin</span>
+                            </button>
+                        </div>
+                    )}
+
+                    {chatMode === 'admin' && adminChatStatus !== 'none' && (
+                        <div style={{
+                            padding: '12px 16px',
+                            borderBottom: '1px solid #e5e7eb',
+                            background: adminChatStatus === 'pending' ? '#fef3c7' : '#dcfce7',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center'
+                        }}>
+                            <span style={{
+                                fontSize: '13px',
+                                color: adminChatStatus === 'pending' ? '#92400e' : '#166534',
+                                fontWeight: '600'
+                            }}>
+                                {adminChatStatus === 'pending' ? '⏳ Waiting for admin to join...' : '✓ Admin is here'}
+                            </span>
+                            <button
+                                onClick={switchToBotChat}
+                                style={{
+                                    padding: '6px 12px',
+                                    background: 'rgba(0,0,0,0.1)',
+                                    color: adminChatStatus === 'pending' ? '#92400e' : '#166534',
+                                    border: 'none',
+                                    borderRadius: '12px',
+                                    cursor: 'pointer',
+                                    fontSize: '11px',
+                                    fontWeight: '600'
+                                }}
+                            >
+                                Switch to Bot
+                            </button>
+                        </div>
+                    )}
+
                     <div style={styles.messagesContainer}>
                         {messages.map((message) => (
                             <div
                                 key={message.id}
                                 style={{
                                     ...styles.messageWrapper,
-                                    ...(message.type === 'user' ? styles.messageWrapperUser : styles.messageWrapperAgent)
+                                    ...(message.type === 'system' 
+                                        ? { justifyContent: 'center' } 
+                                        : message.type === 'user' 
+                                            ? styles.messageWrapperUser 
+                                            : styles.messageWrapperAgent
+                                    )
                                 }}
                             >
-                                <div style={styles.messageContent}>
-                                    <div style={message.type === 'user' ? styles.messageBubbleUser : styles.messageBubbleAgent}>
+                                <div style={message.type === 'system' ? { maxWidth: '90%' } : styles.messageContent}>
+                                    <div style={
+                                        message.type === 'system' 
+                                            ? {
+                                                padding: '8px 16px',
+                                                borderRadius: '12px',
+                                                background: '#fef3c7',
+                                                color: '#92400e',
+                                                fontSize: '13px',
+                                                fontStyle: 'italic',
+                                                textAlign: 'center',
+                                                border: '1px solid #fcd34d'
+                                            }
+                                            : message.type === 'user' 
+                                                ? styles.messageBubbleUser 
+                                                : styles.messageBubbleAgent
+                                    }>
                                         {message.text}
                                     </div>
                                     <div style={{
                                         ...styles.messageTime,
-                                        ...(message.type === 'user' ? styles.messageTimeRight : styles.messageTimeLeft)
+                                        ...(message.type === 'system' 
+                                            ? { textAlign: 'center' } 
+                                            : message.type === 'user' 
+                                                ? styles.messageTimeRight 
+                                                : styles.messageTimeLeft
+                                        )
                                     }}>
                                         {formatTime(message.timestamp)}
                                     </div>
