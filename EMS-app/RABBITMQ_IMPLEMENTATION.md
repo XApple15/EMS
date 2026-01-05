@@ -201,6 +201,201 @@ The system is designed to be idempotent - duplicate events should not create dup
 - User-service logs for "User already exists" messages
 - Database for duplicate AuthId values
 
+## Load Balancing Architecture
+
+### Overview
+
+The Load Balancing Service implements a scalable ingestion pipeline for distributing device data across multiple Monitoring Service replicas. This architecture enables horizontal scaling of the monitoring service to handle high-throughput device data.
+
+### Architecture Diagram
+
+```
+Simulator Service
+      ↓
+  (publishes to)
+      ↓
+Central Device Data Queue (device-data-queue)
+      ↓
+  (consumed by)
+      ↓
+Load Balancer Service
+      ↓
+  (distributes via replica selection)
+      ↓
+Per-Replica Ingest Queues
+  - ingest-queue-1
+  - ingest-queue-2
+  - ingest-queue-3
+      ↓
+Monitoring Service Replicas
+  - Replica 1 (consumes ingest-queue-1)
+  - Replica 2 (consumes ingest-queue-2)
+  - Replica 3 (consumes ingest-queue-3)
+```
+
+### Components
+
+#### 1. Load Balancer Service
+
+**Purpose**: Acts as a central message router that consumes all device data from a central queue and distributes it to replica-specific ingest queues.
+
+**Key Features**:
+- Single consumer of the central device data queue
+- Pluggable replica selection strategies
+- High-throughput message processing with error handling
+- Metrics tracking for load distribution
+
+**Replica Selection Strategies**:
+
+1. **Consistent Hashing** (Default)
+   - Uses MD5 hash of device ID for stable routing
+   - Ensures same device always routes to same replica
+   - Minimal reassignment when replicas are added/removed
+   - Best for: Predictable routing and replica affinity
+
+2. **Weighted Round-Robin**
+   - Distributes load based on replica weights
+   - Higher weight = more messages
+   - Best for: Replicas with different capacities
+
+3. **Load-Based**
+   - Routes to replica with lowest current load
+   - Requires external load monitoring
+   - Best for: Dynamic load balancing with health monitoring
+
+#### 2. Simulator Service Updates
+
+- Now publishes messages directly to the central `device-data-queue`
+- Uses `PublishToQueueAsync` for direct queue publishing
+- No exchange routing for device data (uses default exchange)
+
+#### 3. Monitoring Service Updates
+
+- Each replica consumes from its own ingest queue (`ingest-queue-{replica-id}`)
+- Uses `StartConsumingFromQueueAsync` for direct queue consumption
+- Configurable `ReplicaId` in `appsettings.json`
+- Multiple replicas can run independently
+
+### Configuration
+
+#### Load Balancer Service (`appsettings.json`)
+
+```json
+{
+  "LoadBalancer": {
+    "Strategy": "ConsistentHashing",
+    "CentralQueueName": "device-data-queue",
+    "IngestQueuePattern": "ingest-queue-{0}",
+    "ExchangeName": "device.data",
+    "ExchangeType": "direct",
+    "Replicas": [
+      { "Id": "1", "Weight": 1, "IsHealthy": true },
+      { "Id": "2", "Weight": 1, "IsHealthy": true },
+      { "Id": "3", "Weight": 2, "IsHealthy": true }
+    ]
+  }
+}
+```
+
+#### Monitoring Service Replica Configuration
+
+```json
+{
+  "RabbitMq": {
+    "ReplicaId": "1",
+    "IngestQueuePattern": "ingest-queue-{0}",
+    "DeviceDataExchange": "device.data"
+  }
+}
+```
+
+### Message Flow
+
+1. **Device Data Generation**
+   - Simulator Service generates `SimulatorDataEvent` messages
+   - Published to `device-data-queue` via default exchange
+
+2. **Load Balancing**
+   - Load Balancer consumes from `device-data-queue`
+   - Applies replica selection strategy based on device ID
+   - Publishes to selected replica's ingest queue (e.g., `ingest-queue-1`)
+
+3. **Replica Processing**
+   - Each Monitoring Service replica consumes only from its ingest queue
+   - Processes messages independently
+   - Aggregates hourly consumption data
+   - Stores results in database
+
+### Benefits
+
+1. **Horizontal Scalability**: Add more monitoring service replicas to handle increased load
+2. **Even Load Distribution**: Consistent hashing ensures balanced distribution
+3. **Replica Affinity**: Same device always routes to same replica (important for stateful operations)
+4. **High Availability**: Load balancer can route around unhealthy replicas
+5. **Flexibility**: Easy to switch between different load balancing strategies
+
+### Running with Docker Compose
+
+The system includes a load-balancer-service in docker-compose:
+
+```bash
+cd EMS-app
+docker-compose up
+```
+
+Services available:
+- Load Balancer: http://loadbalancer.docker.localhost (internal)
+- Monitoring Service: http://monitoring.docker.localhost
+- Simulator Service: http://simulator.docker.localhost
+- RabbitMQ Management: http://localhost:15672
+
+### Testing the Load Balancer
+
+1. **Publish Device Data**:
+```bash
+curl -X POST http://simulator.docker.localhost/Simulator/publish \
+  -H "Content-Type: application/json" \
+  -d '{
+    "deviceId": "test-device-123",
+    "dataCount": 10
+  }'
+```
+
+2. **Monitor RabbitMQ**:
+- Visit http://localhost:15672 (admin/admin123)
+- Check `device-data-queue` for incoming messages
+- Check `ingest-queue-1`, `ingest-queue-2`, `ingest-queue-3` for distributed messages
+
+3. **View Load Balancer Metrics**:
+- Check load-balancer-service logs for distribution statistics
+- Metrics logged every minute showing message counts per replica
+
+### Scaling Monitoring Service
+
+To add more replicas, update `docker-compose.yml`:
+
+```yaml
+monitoring-service-2:
+  image: ${DOCKER_REGISTRY-}monitoringservice
+  environment:
+    - RabbitMq__ReplicaId=2
+  # ... rest of config
+```
+
+And add the replica to Load Balancer configuration:
+
+```json
+{
+  "LoadBalancer": {
+    "Replicas": [
+      { "Id": "1", "Weight": 1 },
+      { "Id": "2", "Weight": 1 },  // New replica
+      { "Id": "3", "Weight": 2 }
+    ]
+  }
+}
+```
+
 ## Future Enhancements
 
 - **Dead Letter Queues** - Handle permanently failed messages
@@ -209,6 +404,9 @@ The system is designed to be idempotent - duplicate events should not create dup
 - **Additional Events** - UserUpdated, UserDeleted, etc.
 - **Device-Service Integration** - Subscribe to user events
 - **Distributed Tracing** - OpenTelemetry integration
+- **Dynamic Replica Discovery** - Auto-detect and register new replicas
+- **Load Monitoring** - Real-time replica health and load tracking
+- **Message Prioritization** - Priority queues for critical devices
 
 ## Dependencies
 

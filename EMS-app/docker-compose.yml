@@ -167,6 +167,28 @@ services:
       - ASPNETCORE_URLS=http://+:8080
     depends_on:
       - sqlserver
+      - rabbitmq
+    networks:
+      - ems-net
+    restart: unless-stopped
+
+
+  load-balancer-service:
+    image: ${DOCKER_REGISTRY-}loadbalancerservice
+    build:
+      context: .
+      dockerfile: load-balancer-service/Dockerfile
+    container_name: load-balancer-service
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.loadbalancer.rule=Host(`loadbalancer.docker.localhost`)"
+      - "traefik.http.routers.loadbalancer.entrypoints=web"
+      - "traefik.http.services.loadbalancer.loadbalancer.server.port=8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      - rabbitmq
     networks:
       - ems-net
     restart: unless-stopped
@@ -189,6 +211,8 @@ services:
       - ASPNETCORE_URLS=http://+:8080
     depends_on:
       - sqlserver
+      - rabbitmq
+      - load-balancer-service
     networks:
       - ems-net
     restart: unless-stopped
