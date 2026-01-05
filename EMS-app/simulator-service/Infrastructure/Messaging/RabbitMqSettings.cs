@@ -8,6 +8,7 @@
         public string Password { get; set; } = "admin123";
         public string ExchangeName { get; set; } = "user.events";
         public string ExchangeType { get; set; } = "topic";
+        public string CentralQueueName { get; set; } = "device-data-queue";
         public int MaxRetryAttempts { get; set; } = 3;
         public int RetryDelayMilliseconds { get; set; } = 1000;
     }

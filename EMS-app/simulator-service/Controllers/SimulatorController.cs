@@ -12,20 +12,23 @@ namespace simulator_service.Controllers
     {
         private readonly IEventPublisher _eventPublisher;
         private readonly ILogger<SimulatorController> _logger;
+        private readonly RabbitMqSettings _settings;
 
         private const string SimulatorDataRoutingKey = "monitor.data";
         private const string DeviceRoutingKey = "monitoring.device.created";
 
         public SimulatorController(
             IEventPublisher eventPublisher,
-            ILogger<SimulatorController> logger)
+            ILogger<SimulatorController> logger,
+            Microsoft.Extensions.Options.IOptions<RabbitMqSettings> settings)
         {
             _eventPublisher = eventPublisher;
             _logger = logger;
+            _settings = settings.Value;
         }
 
         /// <summary>
-        /// Publishes simulated device data to the monitoring service via RabbitMQ
+        /// Publishes simulated device data to the central device data queue for load balancing
         /// </summary>
         /// <param name="request">The simulator data to publish</param>
         /// <returns>Result of the publish operation</returns>
@@ -51,14 +54,15 @@ namespace simulator_service.Controllers
                         CorrelationId = correlationId
                     };
 
-                    await _eventPublisher.PublishAsync(simulatorEvent, SimulatorDataRoutingKey);
+                    // Publish to central queue for load balancing
+                    await _eventPublisher.PublishToQueueAsync(simulatorEvent, _settings.CentralQueueName);
 
                     await Task.Delay(TimeSpan.FromMinutes(10));
 
 
                     _logger.LogInformation(
-                        "Published simulator data: DeviceId={DeviceId}, CorrelationId={CorrelationId}, Index={Index}",
-                        request.DeviceId, correlationId, i);
+                        "Published simulator data to central queue: DeviceId={DeviceId}, Queue={QueueName}, CorrelationId={CorrelationId}, Index={Index}",
+                        request.DeviceId, _settings.CentralQueueName, correlationId, i);
                 }
 
                 return Ok(new

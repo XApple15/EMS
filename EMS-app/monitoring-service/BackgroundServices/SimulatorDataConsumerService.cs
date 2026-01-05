@@ -8,11 +8,10 @@ using monitoring_service.Data;
 namespace monitoring_service.BackgroundServices
 {
     /// <summary>
-    /// Background service that consumes SimulatorData events from RabbitMQ
+    /// Background service that consumes SimulatorData events from RabbitMQ ingest queue
     /// and aggregates them hourly in-memory, flushing hourly totals to the DB.
     ///
-    /// Routing Key: monitor.data
-    /// Queue: monitoring-service-simulator-data-queue
+    /// Consumes from per-replica ingest queue (e.g., ingest-queue-1)
     /// </summary>
     public class SimulatorDataConsumerService : BackgroundService
     {
@@ -20,12 +19,7 @@ namespace monitoring_service.BackgroundServices
         private readonly IEventConsumer _eventConsumer;
         private readonly ILogger<SimulatorDataConsumerService> _logger;
         private readonly IEventPublisher _eventPublisher;
-
-
-        private const string QueueName = "monitoring-service-simulator-data-queue";
-
-       
-        private const string SimulatorDataRoutingKey = "monitor.data";
+        private readonly RabbitMqSettings _settings;
 
         private ConcurrentDictionary<Guid, double> _currentHourSums = new();
         private DateTime _currentHourStartUtc;
@@ -37,26 +31,34 @@ namespace monitoring_service.BackgroundServices
             IServiceProvider serviceProvider,
             IEventConsumer eventConsumer,
             ILogger<SimulatorDataConsumerService> logger,
-            IEventPublisher _publisher)
+            IEventPublisher _publisher,
+            Microsoft.Extensions.Options.IOptions<RabbitMqSettings> settings)
         {
             _serviceProvider = serviceProvider;
             _eventConsumer = eventConsumer;
             _logger = logger;
             _eventPublisher = _publisher;
+            _settings = settings.Value;
 
             _currentHourStartUtc = TruncateToHour(DateTime.UtcNow);
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _logger.LogInformation("SimulatorDataConsumerService starting with queue: {QueueName}.. .", QueueName);
+            // Determine ingest queue name based on replica ID
+            var ingestQueueName = string.Format(_settings.IngestQueuePattern, _settings.ReplicaId);
+            
+            _logger.LogInformation(
+                "SimulatorDataConsumerService starting for replica {ReplicaId}, consuming from queue: {QueueName}",
+                _settings.ReplicaId, ingestQueueName);
 
             try
             {
                 var aggregatorTask = Task.Run(() => HourlyAggregatorLoopAsync(stoppingToken), stoppingToken);
 
-                await _eventConsumer.StartConsumingAsync<SimulatorDataEvent>(
-                    routingKey: SimulatorDataRoutingKey,
+                // Consume from the per-replica ingest queue
+                await _eventConsumer.StartConsumingFromQueueAsync<SimulatorDataEvent>(
+                    queueName: ingestQueueName,
                     handler: HandleSimulatorDataEventAsync,
                     cancellationToken: stoppingToken);
 
