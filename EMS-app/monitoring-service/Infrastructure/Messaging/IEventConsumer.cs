@@ -6,5 +6,10 @@
             string routingKey,
             Func<TEvent, Task<bool>> handler,
             CancellationToken cancellationToken) where TEvent : class;
+
+        Task StartConsumingFromQueueAsync<TEvent>(
+            string queueName,
+            Func<TEvent, Task<bool>> handler,
+            CancellationToken cancellationToken) where TEvent : class;
     }
 }
