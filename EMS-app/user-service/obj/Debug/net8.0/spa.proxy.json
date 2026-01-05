@@ -3,7 +3,7 @@
 "ServerUrl": "",
 "RedirectUrl": "",
 "LaunchCommand": "",
-"WorkingDirectory": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service",
+"WorkingDirectory": "/home/runner/work/EMS/EMS/EMS-app/user-service",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }
