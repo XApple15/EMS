@@ -79,7 +79,7 @@ const ChatWidget = () => {
                         setAdminChatStatus('pending');
                     }
                     setChatMode('admin');
-                    
+
                     // Load messages for this session
                     await loadAdminChatMessages(response.data.session.chatRoomId);
                 }
@@ -126,11 +126,11 @@ const ChatWidget = () => {
                 setAdminChatStatus('pending');
                 setChatMode('admin');
                 setMessages([
-                    { 
-                        id: Date.now(), 
-                        text: 'Connecting you with an admin. Please wait...', 
-                        type: 'system', 
-                        timestamp: new Date() 
+                    {
+                        id: Date.now(),
+                        text: 'Connecting you with an admin. Please wait...',
+                        type: 'system',
+                        timestamp: new Date()
                     }
                 ]);
 
@@ -210,7 +210,7 @@ const ChatWidget = () => {
             connection.invoke('RegisterUser', userId, 'user')
                 .then(() => {
                     console.log('User ID registered successfully');
-                    
+
                     // Join admin chat room if we have an active session
                     if (adminChatSession && adminChatSession.chatRoomId) {
                         connection.invoke('JoinChatRoom', adminChatSession.chatRoomId)
@@ -255,9 +255,9 @@ const ChatWidget = () => {
             });
 
             // Update status if admin joined - check for system message with specific content
-            if (message.senderRole === 'system' && 
-                (message.message.toLowerCase().includes('admin') && 
-                 message.message.toLowerCase().includes('joined'))) {
+            if (message.senderRole === 'system' &&
+                (message.message.toLowerCase().includes('admin') &&
+                    message.message.toLowerCase().includes('joined'))) {
                 setAdminChatStatus('active');
             }
 
@@ -919,7 +919,7 @@ const ChatWidget = () => {
                                     {chatMode === 'admin' ? 'Admin Support' : 'Support Chat'}
                                 </h3>
                                 <p style={styles.headerSubtitle}>
-                                    {chatMode === 'admin' 
+                                    {chatMode === 'admin'
                                         ? (adminChatStatus === 'pending' ? 'Waiting for admin...' : 'Connected with admin')
                                         : (connectionStatus === 'connected' ? 'Online' : 'Connecting...')
                                     }
@@ -1012,17 +1012,17 @@ const ChatWidget = () => {
                                 key={message.id}
                                 style={{
                                     ...styles.messageWrapper,
-                                    ...(message.type === 'system' 
-                                        ? { justifyContent: 'center' } 
-                                        : message.type === 'user' 
-                                            ? styles.messageWrapperUser 
+                                    ...(message.type === 'system'
+                                        ? { justifyContent: 'center' }
+                                        : message.type === 'user'
+                                            ? styles.messageWrapperUser
                                             : styles.messageWrapperAgent
                                     )
                                 }}
                             >
                                 <div style={message.type === 'system' ? { maxWidth: '90%' } : styles.messageContent}>
                                     <div style={
-                                        message.type === 'system' 
+                                        message.type === 'system'
                                             ? {
                                                 padding: '8px 16px',
                                                 borderRadius: '12px',
@@ -1033,18 +1033,18 @@ const ChatWidget = () => {
                                                 textAlign: 'center',
                                                 border: '1px solid #fcd34d'
                                             }
-                                            : message.type === 'user' 
-                                                ? styles.messageBubbleUser 
+                                            : message.type === 'user'
+                                                ? styles.messageBubbleUser
                                                 : styles.messageBubbleAgent
                                     }>
                                         {message.text}
                                     </div>
                                     <div style={{
                                         ...styles.messageTime,
-                                        ...(message.type === 'system' 
-                                            ? { textAlign: 'center' } 
-                                            : message.type === 'user' 
-                                                ? styles.messageTimeRight 
+                                        ...(message.type === 'system'
+                                            ? { textAlign: 'center' }
+                                            : message.type === 'user'
+                                                ? styles.messageTimeRight
                                                 : styles.messageTimeLeft
                                         )
                                     }}>

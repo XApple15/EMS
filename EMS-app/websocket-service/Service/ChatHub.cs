@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using System.Text.RegularExpressions;
 using websocket_service.Model;
-using websocket_service.Service;
-
 
 namespace websocket_service.Service
 {
@@ -34,21 +33,22 @@ namespace websocket_service.Service
         {
             var connectionId = Context.ConnectionId;
             _logger.LogInformation("User disconnected: {UserId}", connectionId);
-            
+
             // Clean up user connections using reverse lookup for O(1) performance
             if (_connectionToUser.TryGetValue(connectionId, out var userId))
             {
                 _userConnections.Remove(userId);
                 _userRoles.Remove(userId);
                 _connectionToUser.Remove(connectionId);
+
             }
-            
+
             // Clean up chat room connections
             foreach (var room in _chatRoomConnections.Values)
             {
                 room.Remove(connectionId);
             }
-            
+
             if (exception != null)
             {
                 _logger.LogError(exception, "User disconnected with error");
@@ -84,7 +84,7 @@ namespace websocket_service.Service
             _userRoles[userId] = role.ToLower();
             _logger.LogInformation("Registered user {UserId} with connection {ConnectionId} as {Role}",
                 userId, Context.ConnectionId, role);
-            
+
             await Clients.Caller.SendAsync("Registered", new { userId, role, connectionId = Context.ConnectionId });
         }
 
@@ -95,13 +95,13 @@ namespace websocket_service.Service
             {
                 _chatRoomConnections[chatRoomId] = new HashSet<string>();
             }
-            
+
             _chatRoomConnections[chatRoomId].Add(Context.ConnectionId);
             await Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId);
-            
+
             _logger.LogInformation("Connection {ConnectionId} joined chat room {ChatRoomId}",
                 Context.ConnectionId, chatRoomId);
-            
+
             await Clients.Caller.SendAsync("JoinedChatRoom", chatRoomId);
         }
 
@@ -112,9 +112,9 @@ namespace websocket_service.Service
             {
                 _chatRoomConnections[chatRoomId].Remove(Context.ConnectionId);
             }
-            
+
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatRoomId);
-            
+
             _logger.LogInformation("Connection {ConnectionId} left chat room {ChatRoomId}",
                 Context.ConnectionId, chatRoomId);
         }
@@ -137,7 +137,7 @@ namespace websocket_service.Service
 
             // Send to all users in the chat room
             await Clients.Group(chatRoomId).SendAsync("ReceiveAdminChatMessage", chatMessage);
-            
+
             // Confirm to sender
             await Clients.Caller.SendAsync("AdminChatMessageSent", chatMessage);
         }
@@ -149,7 +149,7 @@ namespace websocket_service.Service
                 ? connectionId
                 : null;
         }
-        
+
         // Get user role
         public static string? GetUserRole(string userId)
         {

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\adminchat.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\adminchat.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app-frontend\\src\\components\\chatwidget.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{16ADC8BD-F44C-4CB1-811D-5646E1CC6EB7}|ems-app-frontend.esproj|solutionrelative:src\\components\\chatwidget.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 192,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +50,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "AdminChat.jsx",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\AdminChat.jsx",
+              "RelativeDocumentMoniker": "src\\components\\AdminChat.jsx",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\AdminChat.jsx",
+              "RelativeToolTip": "src\\components\\AdminChat.jsx",
+              "ViewState": "AgIAAPwCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-12-27T22:17:19.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ClientDashboard.jsx",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\ClientDashboard.jsx",
               "RelativeDocumentMoniker": "src\\components\\ClientDashboard.jsx",
@@ -58,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ChatWidget.jsx",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app-frontend\\src\\components\\ChatWidget.jsx",
               "RelativeDocumentMoniker": "src\\components\\ChatWidget.jsx",

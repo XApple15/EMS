@@ -11,5 +11,6 @@
         public string NotificationsQueue { get; set; } = "user_notifications";
         public string AdminChatQueue { get; set; } = "admin_chat_messages";
         public string AdminNotificationsQueue { get; set; } = "admin_notifications";
+
     }
 }

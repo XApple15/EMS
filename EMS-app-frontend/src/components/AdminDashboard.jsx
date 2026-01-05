@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+﻿import React, { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userService, deviceService } from '../api/api-service';
 import './AdminDashboard.css';
@@ -269,8 +269,8 @@ const AdminDashboard = () => {
                 <div className="admin-actions">
                     <button className="primary" onClick={handleAdd}>Create User</button>
                     <button className="primary" onClick={handleAddDevice}>Create Device</button>
-                    <button 
-                        className="primary" 
+                    <button
+                        className="primary"
                         onClick={() => navigate('/admin/chat')}
                         style={{
                             background: 'linear-gradient(to right, #3b82f6, #2563eb)',

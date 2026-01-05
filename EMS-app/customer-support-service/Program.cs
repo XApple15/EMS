@@ -8,11 +8,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
 
 builder.Services.AddSingleton<ISupportAgent, SupportAgent>();
 builder.Services.AddSingleton<IRabbitMQSupportService, RabbitMQSupportService>();
 
-// Configure RabbitMQ settings for admin chat
+
 builder.Services.Configure<RabbitMQSettings>(options =>
 {
     options.AdminChatQueue = "admin_chat_messages";
@@ -21,7 +22,6 @@ builder.Services.Configure<RabbitMQSettings>(options =>
 // Register Admin Chat services
 builder.Services.AddSingleton<IAdminChatPublisher, AdminChatPublisher>();
 builder.Services.AddSingleton<IAdminChatService, AdminChatService>();
-
 var app = builder.Build();
 
 app.Services.GetRequiredService<IRabbitMQSupportService>();

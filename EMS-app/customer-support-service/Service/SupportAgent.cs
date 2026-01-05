@@ -1,14 +1,20 @@
 ﻿using customer_support_service.Model;
+using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace customer_support_service.Service
 {
     public class SupportAgent : ISupportAgent
     {
         private readonly ILogger<SupportAgent> _logger;
+        private readonly HttpClient _httpClient;
+        private readonly string _openAiApiKey;
 
-        public SupportAgent(ILogger<SupportAgent> logger)
+        public SupportAgent(ILogger<SupportAgent> logger, IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
             _logger = logger;
+            _httpClient = httpClientFactory.CreateClient();
+            _openAiApiKey = configuration["OpenAI:ApiKey"] ?? throw new ArgumentNullException("OpenAI API Key not configured");
         }
 
         public async Task<ChatMessage> ProcessQuestion(ChatMessage question)
@@ -19,7 +25,7 @@ namespace customer_support_service.Service
             await Task.Delay(Random.Shared.Next(500, 1500));
 
             // Generate automated response
-            var answer = GenerateAnswer(question.Message);
+            var answer = await GenerateAnswer(question.Message);
 
             _logger.LogInformation("Generated answer for user {UserId}", question.UserId);
 
@@ -32,10 +38,11 @@ namespace customer_support_service.Service
             };
         }
 
-        private string GenerateAnswer(string question)
+        private async Task<string> GenerateAnswer(string question)
         {
             var lowerQuestion = question.ToLower();
 
+            // Check predefined rules first
             if (lowerQuestion.Contains("hello") || lowerQuestion.Contains("hi"))
             {
                 return "Hello! How can I assist you today?";
@@ -78,7 +85,63 @@ namespace customer_support_service.Service
             }
             else
             {
-                return $"Thank you for your question. I've received: '{question}'. While I can help with common questions about pricing, shipping, returns, and account management, your specific question may require a human agent. Would you like me to connect you with a support specialist?";
+                // No rule matched - use OpenAI API
+                _logger.LogInformation("No rule matched, calling OpenAI API");
+                return await GetOpenAiResponse(question);
+            }
+        }
+
+        private async Task<string> GetOpenAiResponse(string question)
+        {
+            try
+            {
+                var request = new
+                {
+                    model = "gpt-4o-mini",
+                    messages = new[]
+                    {
+                        new
+                        {
+                            role = "system",
+                            content = "You are a helpful customer support agent. Be concise, friendly, and professional. Provide accurate information about our services."
+                        },
+                        new
+                        {
+                            role = "user",
+                            content = question
+                        }
+                    },
+                    max_tokens = 300,
+                    temperature = 0.7
+                };
+
+                _httpClient.DefaultRequestHeaders.Clear();
+                _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_openAiApiKey}");
+
+                var response = await _httpClient.PostAsJsonAsync(
+                    "https://api.openai.com/v1/chat/completions",
+                    request
+                );
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger.LogError("OpenAI API call failed with status code: {StatusCode}", response.StatusCode);
+                    return "I apologize, but I'm having trouble processing your request right now. Please try again later or contact our support team at support@example.com.";
+                }
+
+                var jsonResponse = await response.Content.ReadFromJsonAsync<JsonElement>();
+                var aiResponse = jsonResponse
+                    .GetProperty("choices")[0]
+                    .GetProperty("message")
+                    .GetProperty("content")
+                    .GetString();
+
+                return aiResponse ?? "I apologize, but I couldn't generate a response. Please contact our support team.";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error calling OpenAI API");
+                return "I apologize, but I'm having trouble processing your request right now. Please try again later or contact our support team at support@example.com.";
             }
         }
     }

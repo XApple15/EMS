@@ -169,7 +169,7 @@ namespace websocket_service.Service
                         }
                         else
                         {
-                            _logger.LogWarning("No connection ID found for user {UserId}, notification not sent",notification.UserId);
+                            _logger.LogWarning("No connection ID found for user {UserId}, notification not sent", notification.UserId);
                         }
                     }
                 }
@@ -235,7 +235,7 @@ namespace websocket_service.Service
                 {
                     var body = ea.Body.ToArray();
                     var message = Encoding.UTF8.GetString(body);
-                    
+
                     // Try to deserialize as Notification first
                     var notification = JsonSerializer.Deserialize<Notification>(message);
 
@@ -246,7 +246,7 @@ namespace websocket_service.Service
                         // Broadcast to all connected admins
                         // We'll send to all connections and let the client filter
                         await _hubContext.Clients.All.SendAsync("ReceiveAdminNotification", notification);
-                        
+
                         _logger.LogInformation("Broadcasted admin notification to all connected admins");
                     }
                 }

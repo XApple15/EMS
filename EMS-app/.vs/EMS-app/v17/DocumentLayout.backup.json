@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AC38F5C0-5970-4D09-BCFF-D6A57CDB041E}|customer-support-service\\customer-support-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\customer-support-service\\service\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC38F5C0-5970-4D09-BCFF-D6A57CDB041E}|customer-support-service\\customer-support-service.csproj|solutionrelative:customer-support-service\\service\\rabbitmqsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64BABFF7-47E7-45C8-8242-AEEA69A16030}|websocket-service\\websocket-service.csproj|c:\\users\\george\\source\\repos\\energy-management-system-netreact\\ems-app\\websocket-service\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{64BABFF7-47E7-45C8-8242-AEEA69A16030}|websocket-service\\websocket-service.csproj|solutionrelative:websocket-service\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,6 +59,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RabbitMQSettings.cs",
+              "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\customer-support-service\\Service\\RabbitMQSettings.cs",
+              "RelativeDocumentMoniker": "customer-support-service\\Service\\RabbitMQSettings.cs",
+              "ToolTip": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\customer-support-service\\Service\\RabbitMQSettings.cs",
+              "RelativeToolTip": "customer-support-service\\Service\\RabbitMQSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T22:20:51.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "RabbitMQService.cs",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\websocket-service\\Service\\RabbitMQService.cs",
               "RelativeDocumentMoniker": "websocket-service\\Service\\RabbitMQService.cs",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\websocket-service\\Service\\ChatHub.cs",
               "RelativeDocumentMoniker": "websocket-service\\Service\\ChatHub.cs",
@@ -75,12 +92,11 @@
               "RelativeToolTip": "websocket-service\\Service\\ChatHub.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAkwEUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:27:05.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T17:27:05.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\user-service\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "user-service\\Controllers\\UserController.cs",
@@ -88,12 +104,11 @@
               "RelativeToolTip": "user-service\\Controllers\\UserController.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAAQwG8AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:18:48.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T17:18:48.088Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\George\\source\\repos\\Energy-Management-System-NETReact\\EMS-app\\auth-service\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "auth-service\\Controllers\\AuthController.cs",
@@ -101,8 +116,7 @@
               "RelativeToolTip": "auth-service\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAJsAAAAAAAAAAAA3wLEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-27T17:17:04.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-27T17:17:04.727Z"
             }
           ]
         },

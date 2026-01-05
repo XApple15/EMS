@@ -7,8 +7,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import ClientDashboard from './components/ClientDashboard';
 import AdminDashboard from './components/AdminDashboard';
-import AdminChat from './components/AdminChat';
 import EnergyConsumptionHistory from './components/EnergyConsumptionHistory';
+import AdminChat from './components/AdminChat';
 import './App.css';
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
                       <Route path="/login" element={<Login />} />
                       <Route path="/register" element={<Register />} />
                       <Route path="/client/dashboard" element={<ClientDashboard />} />
-                      <Route path="/admin/dashboard" element={<AdminDashboard />} />
-                      <Route path="/admin/chat" element={<AdminChat />} />
+                        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                        <Route path="/admin/chat" element={<AdminChat />} />
                       <Route path="/client/energy-history" element={<EnergyConsumptionHistory />} />
                   </Routes>
               </div>
